@@ -39,9 +39,9 @@ void nvme_main()
 
 	if(cpl_In32(0x17FFFFF0) != 85465)	InitFTL(); 																																// initilize ftl components
 	cpl_print("Turn on the host PC \r\n");  
-		uint32_t counter_start_reg_addr = 0x43C80018;
-		uint32_t counter_reset_reg_addr = 0x43C80014;
-		cpl_Out32(counter_start_reg_addr, 1); // firmware_signal for counter_reset
+		uint32_t counter_start_reg_addr = 0x43C80018; // counter start register address
+		uint32_t counter_reset_reg_addr = 0x43C80014; // counter reset register address
+		cpl_Out32(counter_start_reg_addr, 1); 				// firmware_signal for counter_reset
 	while(1)
 	{
 		exeLlr = 1;
