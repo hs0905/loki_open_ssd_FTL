@@ -101,7 +101,7 @@ int main()
 	// cpl_printint(cpl_In32(0x17FFFFF0));
 
 	if(cpl_In32(0x17FFFFF0) != 85465){
-		cpl_memset((void *)0x20fbd0/*bss*/, 0, 0x648); //bss section (uninitialized global variable) initialization
+		cpl_memset((void *)0x20fbd0	 , 0, 0x648); //bss section (uninitialized global variable) initialization
 		cpl_memset((void *)0x17FFFFF0, 0, 0x4);
 		cpl_memset((void *)0x17FFFFF4, 0, 0x4);
 		cpl_memset((void *)0x17FDFF00, 0, 0x20000);

@@ -23,7 +23,7 @@ void nvme_main()
 	//complete logic begin
 	uint32_t ENTRY_LIST_TABLE_START_ADDRESS = 0x17FDFF00; 											// varible declaration
 	if(cpl_In32(0x17FFFFF0) == 85465){ 																					// value in the 0x17FFFFF0 address is 85465(reset_flag)
-		uint32_t list_entry_num = cpl_In32(0x17FFFFF4);														// list_entry_num 을 선헌하며 0x17FFFFF4 에 있는 값을 저장.
+		uint32_t list_entry_num = cpl_In32(0x17FFFFF4);														
 		while(list_entry_num){ 																										// if list_entry_num != 0 keep going
 			if(cpl_In32(ENTRY_LIST_TABLE_START_ADDRESS + 8) == 1){ 									// start address 부터 8byte를 이동하고, 해당 값이 1이면
 				list_entry_num -=1; 																									// list_entry_num 에서 1을 뺌.
@@ -35,22 +35,16 @@ void nvme_main()
 			ENTRY_LIST_TABLE_START_ADDRESS += 12; 																	// start_address를 12byte 이동
 		}																																					// end of while, endless loop before (list_entry_num == 0)
 		cpl_Out32(0x17FFFFF4, list_entry_num);																		// 0x17FFFFF4 에 list_entry_num 값을 write(list_entry_num == 0)
-	}
-
-	if(cpl_In32(0x17FFFFF0) != 85465)	InitFTL(); 																																// initilize ftl components
+	}if(cpl_In32(0x17FFFFF0) != 85465)	InitFTL(); 															// initilize ftl components
+	
 	cpl_print("Turn on the host PC \r\n");  
-		uint32_t counter_start_reg_addr = 0x43C80018; // counter start register address
-		uint32_t counter_reset_reg_addr = 0x43C80014; // counter reset register address
-		cpl_Out32(counter_start_reg_addr, 1); 				// firmware_signal for counter_reset
+	uint32_t counter_reset_reg_addr = 0x43C80014; // counter reset register address
+	uint32_t counter_start_reg_addr = 0x43C80018; // counter start register address
+	
 	while(1)
 	{
+		cpl_Out32(counter_start_reg_addr, 1); 				// firmware_signal for counter start
 		exeLlr = 1;
-	// firmware_signal for counter_start
-	/*1. NVME_TASK_WAIT_CC_EN (CC (Controller Configuration) 등록을 기다림)
-	NVMe 컨트롤러가 초기화되고, 호스트에 의해 활성화될 준비가 되었는지 확인합니다 (check_nvme_cc_en 함수).
-	CC 등록이 활성화되면 (즉, ccEn == 1), 관리 큐를 활성화하고, 컨트롤러 상태를 준비 완료(NVME_TASK_RUNNING)로 변경합니다.
-	리셋 플래그 주소에 특정 값을 기록하여 시스템이 리셋되었음을 나타냅니다.
-	*/
 		if(g_nvmeTask.status == NVME_TASK_WAIT_CC_EN){
 			uint32_t ccEn;
 			ccEn = check_nvme_cc_en(); // status of nvme
