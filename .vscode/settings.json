@@ -1,0 +1,13 @@
+{
+    "files.associations": {
+        "ariane.h": "c",
+        "stdint.h": "c",
+        "memory_map.h": "c",
+        "host_lld.h": "c",
+        "ftl_config.h": "c",
+        "stdlib.h": "c",
+        "time.h": "c",
+        "nvme.h": "c",
+        "request_queue.h": "c"
+    }
+}

@@ -1,0 +1,16 @@
+MEMORY
+{
+ram : ORIGIN = 0x00200000, LENGTH = 0x100000
+dataram : ORIGIN = 0x10000000, LENGTH = 0x10000
+}
+SECTIONS
+{
+.text : { *(.text*) } > ram
+.data : { *(.data*) } > ram
+.rodata : { *(.data*) } > ram
+.sdata : { *(.sdata*) } > ram
+.bss : { __bss_start = .; 
+          *(.bss*) 
+          __bss_end = .;
+          } > ram
+}

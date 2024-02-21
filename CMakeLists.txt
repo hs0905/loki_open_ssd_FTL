@@ -1,0 +1,1 @@
+ADD_EXECUTABLE( ftl_elf main.c address_translation.c host_lld.c nvme_io_cmd.c ariane.cnvme_main.c data_buffer.c n.c _driver.c request_all.c ation.c ftl.c onfig.c nvme_admin.c md.c request_.c hedule.c garbage.c oll.c tion.c nvme_identify.c request_transform.c )

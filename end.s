@@ -1,0 +1,3 @@
+.global end
+end:
+nop
