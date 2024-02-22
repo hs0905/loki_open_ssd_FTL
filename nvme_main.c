@@ -190,6 +190,6 @@ void nvme_main()
 			SchedulingNandReq();
 		}
 		cpl_Out32(counter_reset_reg_addr, 1);
-		cpl_Out32(counter_reset_reg_addr, 0);
+		// cpl_Out32(counter_reset_reg_addr, 0);
 	}
 }
