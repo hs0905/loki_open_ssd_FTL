@@ -43,7 +43,6 @@ void nvme_main()
 	
 	while(1)
 	{
-		cpl_Out32(counter_start_reg_addr, 1); 				// firmware_signal for counter start
 		exeLlr = 1;
 		if(g_nvmeTask.status == NVME_TASK_WAIT_CC_EN){
 			uint32_t ccEn;
@@ -55,6 +54,7 @@ void nvme_main()
 
 				if(cpl_In32(0x17FFFFF0) == 0){ 					// address of reset_flag
 					cpl_Out32(0x17FFFFF0, 85465); 				// write 85465 to reset_flag address
+					cpl_Out32(counter_start_reg_addr, 1); 				// firmware_signal for counter start
 				}
 				cpl_print("\r\nNVMe ready!!!\r\n");
 			}
@@ -190,6 +190,6 @@ void nvme_main()
 			SchedulingNandReq();
 		}
 		cpl_Out32(counter_reset_reg_addr, 1);
-		// cpl_Out32(counter_reset_reg_addr, 0);
+		cpl_Out32(counter_reset_reg_addr, 0);
 	}
 }

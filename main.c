@@ -84,7 +84,7 @@ extern NVME_CONTEXT g_nvmeTask;
 
 int main()
 {
-	cpl_print("hs06\n");
+	cpl_print("hs16asdasdsadasdafsafsdasafsa\n");
 	// cpl_memset((void *)0x211BC0, 0, 0x630);
 	// cpl_memset((void *)(&__bss_start), 0, (((unsigned int)&__bss_end)-((unsigned int)&__bss_start)));
 	
@@ -101,7 +101,7 @@ int main()
 	// cpl_printint(cpl_In32(0x17FFFFF0));
 
 	if(cpl_In32(0x17FFFFF0) != 85465){
-		cpl_memset((void *)0x20fbd0	 , 0, 0x648); //bss section (uninitialized global variable) initialization
+		cpl_memset((void *)0x20fbf0	 , 0, 0x648); //bss section (uninitialized global variable) initialization
 		cpl_memset((void *)0x17FFFFF0, 0, 0x4);
 		cpl_memset((void *)0x17FFFFF4, 0, 0x4);
 		cpl_memset((void *)0x17FDFF00, 0, 0x20000);
