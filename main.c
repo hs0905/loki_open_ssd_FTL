@@ -11,7 +11,7 @@ extern NVME_CONTEXT g_nvmeTask;
 
 int main()
 {
-	cpl_print("hs16asdasdsadasdafsafsdasafsa\n");
+	cpl_print("hs17\n");
 
 	if(cpl_In32(0x17FFFFF0) != 85465){
 		cpl_memset((void *)0x20fbf0	 , 0, 0x648); //bss section (uninitialized global variable) initialization
