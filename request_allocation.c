@@ -1,48 +1,3 @@
-//////////////////////////////////////////////////////////////////////////////////
-// request_allocation.c for Cosmos+ OpenSSD
-// Copyright (c) 2017 Hanyang University ENC Lab.
-// Contributed by Yong Ho Song <yhsong@enc.hanyang.ac.kr>
-//				  Jaewook Kwak <jwkwak@enc.hanyang.ac.kr>
-//
-// This file is part of Cosmos+ OpenSSD.
-//
-// Cosmos+ OpenSSD is free software; you can redistribute it and/or modify
-// it under the terms of the GNU General Public License as published by
-// the Free Software Foundation; either version 3, or (at your option)
-// any later version.
-//
-// Cosmos+ OpenSSD is distributed in the hope that it will be useful,
-// but WITHOUT ANY WARRANTY; without even the implied warranty of
-// MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.
-// See the GNU General Public License for more details.
-//
-// You should have received a copy of the GNU General Public License
-// along with Cosmos+ OpenSSD; see the file COPYING.
-// If not, see <http://www.gnu.org/licenses/>.
-//////////////////////////////////////////////////////////////////////////////////
-
-//////////////////////////////////////////////////////////////////////////////////
-// Company: ENC Lab. <http://enc.hanyang.ac.kr>
-// Engineer: Jaewook Kwak <jwkwak@enc.hanyang.ac.kr>
-//
-// Project Name: Cosmos+ OpenSSD
-// Design Name: Cosmos+ Firmware
-// Module Name: Request Allocator
-// File Name: request_allocation.c
-//
-// Version: v1.0.0
-//
-// Description:
-//   - allocate requests to each request queue
-//////////////////////////////////////////////////////////////////////////////////
-
-//////////////////////////////////////////////////////////////////////////////////
-// Revision History:
-//
-// * v1.0.0
-//   - First draft
-//////////////////////////////////////////////////////////////////////////////////
-
 #pragma GCC push_options
 #pragma GCC optimize ("O0")
 
@@ -51,9 +6,9 @@
 #include "memory_map.h"
 #include <stdint.h>
 
-P_REQ_POOL reqPoolPtr;
-FREE_REQUEST_QUEUE freeReqQ;
-SLICE_REQUEST_QUEUE sliceReqQ;
+P_REQ_POOL reqPoolPtr; 					// "request pool" pointer
+FREE_REQUEST_QUEUE freeReqQ; 		// "free request queue" pointer
+SLICE_REQUEST_QUEUE sliceReqQ; 	// "slice request queue" pointer
 BLOCKED_BY_BUFFER_DEPENDENCY_REQUEST_QUEUE blockedByBufDepReqQ;
 BLOCKED_BY_ROW_ADDR_DEPENDENCY_REQUEST_QUEUE blockedByRowAddrDepReqQ[USER_CHANNELS][USER_WAYS];
 NVME_DMA_REQUEST_QUEUE nvmeDmaReqQ;
@@ -68,21 +23,21 @@ void InitReqPool()
 
 	reqPoolPtr = (P_REQ_POOL) REQ_POOL_ADDR; //revise address
 	
-	freeReqQ.headReq = 0;
-	freeReqQ.tailReq = AVAILABLE_OUNTSTANDING_REQ_COUNT - 1;
+	freeReqQ.headReq 	= 0;
+	freeReqQ.tailReq 	= AVAILABLE_OUNTSTANDING_REQ_COUNT - 1;
 
-		sliceReqQ.headReq = REQ_SLOT_TAG_NONE;
-		sliceReqQ.tailReq = REQ_SLOT_TAG_NONE;
-		sliceReqQ.reqCnt = 0;
+	sliceReqQ.headReq = REQ_SLOT_TAG_NONE;
+	sliceReqQ.tailReq = REQ_SLOT_TAG_NONE;
+	sliceReqQ.reqCnt 	= 0;
+
+	blockedByBufDepReqQ.headReq = REQ_SLOT_TAG_NONE;
+	blockedByBufDepReqQ.tailReq = REQ_SLOT_TAG_NONE;
+	blockedByBufDepReqQ.reqCnt 	= 0;
+
+	nvmeDmaReqQ.headReq = REQ_SLOT_TAG_NONE;
+	nvmeDmaReqQ.tailReq = REQ_SLOT_TAG_NONE;
+	nvmeDmaReqQ.reqCnt 	= 0;
 	
-		blockedByBufDepReqQ.headReq = REQ_SLOT_TAG_NONE;
-		blockedByBufDepReqQ.tailReq = REQ_SLOT_TAG_NONE;
-		blockedByBufDepReqQ.reqCnt = 0;
-	
-		nvmeDmaReqQ.headReq = REQ_SLOT_TAG_NONE;
-		nvmeDmaReqQ.tailReq = REQ_SLOT_TAG_NONE;
-		nvmeDmaReqQ.reqCnt = 0;
-		
 	for(chNo = 0; chNo<USER_CHANNELS; chNo++)
 		for(wayNo = 0; wayNo<USER_WAYS; wayNo++)
 		{
@@ -97,11 +52,11 @@ void InitReqPool()
 				
 		for(reqSlotTag = 0; reqSlotTag < AVAILABLE_OUNTSTANDING_REQ_COUNT; reqSlotTag++)
 		{
-			reqPoolPtr->reqPool[reqSlotTag].reqQueueType =  REQ_QUEUE_TYPE_FREE;
+			reqPoolPtr->reqPool[reqSlotTag].reqQueueType 		= REQ_QUEUE_TYPE_FREE;
 			reqPoolPtr->reqPool[reqSlotTag].prevBlockingReq = REQ_SLOT_TAG_NONE;
 			reqPoolPtr->reqPool[reqSlotTag].nextBlockingReq = REQ_SLOT_TAG_NONE;
-			reqPoolPtr->reqPool[reqSlotTag].prevReq = reqSlotTag - 1;
-			reqPoolPtr->reqPool[reqSlotTag].nextReq = reqSlotTag + 1;
+			reqPoolPtr->reqPool[reqSlotTag].prevReq 				= reqSlotTag - 1;
+			reqPoolPtr->reqPool[reqSlotTag].nextReq 				= reqSlotTag + 1;
 		}
 
 		reqPoolPtr->reqPool[0].prevReq = REQ_SLOT_TAG_NONE;

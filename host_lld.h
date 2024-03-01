@@ -98,18 +98,18 @@ typedef struct _DEV_IRQ_REG
 	union {
 		uint32_t dword;
 		struct {
-			uint32_t pcieLink			:1;
+			uint32_t pcieLink				:1;
 			uint32_t busMaster			:1;
-			uint32_t pcieIrq			:1;
-			uint32_t pcieMsi			:1;
-			uint32_t pcieMsix			:1;
-			uint32_t nvmeCcEn			:1;
+			uint32_t pcieIrq				:1;
+			uint32_t pcieMsi				:1;
+			uint32_t pcieMsix				:1;
+			uint32_t nvmeCcEn				:1;
 			uint32_t nvmeCcShn			:1;
 			uint32_t mAxiWriteErr		:1;
 			uint32_t mAxiReadErr		:1;
 			uint32_t pcieMreqErr		:1;
 			uint32_t pcieCpldErr		:1;
-			uint32_t pcieCpldLenErr		:1;
+			uint32_t pcieCpldLenErr	:1;
 			uint32_t reserved0			:20;
 		};
 	};
@@ -120,7 +120,7 @@ typedef struct _PCIE_STATUS_REG
 	union {
 		uint32_t dword;
 		struct {
-			uint32_t ltssm				:6;
+			uint32_t ltssm					:6;
 			uint32_t reserved0			:2;
 			uint32_t pcieLinkUp			:1;
 			uint32_t reserved1			:23;

@@ -1,51 +1,3 @@
-//////////////////////////////////////////////////////////////////////////////////
-// ftl_config.c for Cosmos+ OpenSSD
-// Copyright (c) 2017 Hanyang University ENC Lab.
-// Contributed by Yong Ho Song <yhsong@enc.hanyang.ac.kr>
-//				  Jaewook Kwak <jwkwak@enc.hanyang.ac.kr>
-//				  Sangjin Lee <sjlee@enc.hanyang.ac.kr>
-//
-// This file is part of Cosmos+ OpenSSD.
-//
-// Cosmos+ OpenSSD is free software; you can redistribute it and/or modify
-// it under the terms of the GNU General Public License as published by
-// the Free Software Foundation; either version 3, or (at your option)
-// any later version.
-//
-// Cosmos+ OpenSSD is distributed in the hope that it will be useful,
-// but WITHOUT ANY WARRANTY; without even the implied warranty of
-// MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.
-// See the GNU General Public License for more details.
-//
-// You should have received a copy of the GNU General Public License
-// along with Cosmos+ OpenSSD; see the file COPYING.
-// If not, see <http://www.gnu.org/licenses/>.
-//////////////////////////////////////////////////////////////////////////////////
-
-//////////////////////////////////////////////////////////////////////////////////
-// Company: ENC Lab. <http://enc.hanyang.ac.kr>
-// Engineer: Jaewook Kwak <jwkwak@enc.hanyang.ac.kr>
-//
-// Project Name: Cosmos+ OpenSSD
-// Design Name: Cosmos+ Firmware
-// Module Name: Flash Translation Layer Configuration Manager
-// File Name: ftl_config.c
-//
-// Version: v1.0.0
-//
-// Description:
-//   - initialize flash translation layer
-//	 - check configuration options
-//	 - initialize NAND device
-//////////////////////////////////////////////////////////////////////////////////
-
-//////////////////////////////////////////////////////////////////////////////////
-// Revision History:
-//
-// * v1.0.0
-//   - First draft
-//////////////////////////////////////////////////////////////////////////////////
-
 #pragma GCC push_options
 #pragma GCC optimize ("O0")
 
@@ -60,41 +12,26 @@ V2FMCRegisters* chCtlReg[USER_CHANNELS];
 
 void InitFTL()
 {
-	CheckConfigRestriction();
-
-	InitChCtlReg();
-	// if(cpl_In32(0x17FFFFF0) != 85465)
-		InitReqPool();
-	InitDependencyTable();
+	CheckConfigRestriction(); // error checking
+	InitChCtlReg();						// initialize channel control register(assign base address of channel control register)
+	InitReqPool();						// initialize request pool
+	InitDependencyTable();    // 
 	InitReqScheduler();
-	// if(cpl_In32(0x17FFFFF0) != 85465)
-		InitNandArray();
+	InitNandArray();
 	InitAddressMap();
 	InitDataBuf();
 	InitGcVictimMap();
 
 	storageCapacity_L = (MB_PER_SSD - (MB_PER_MIN_FREE_BLOCK_SPACE + mbPerbadBlockSpace + MB_PER_OVER_PROVISION_BLOCK_SPACE)) * ((1024*1024) / BYTES_PER_NVME_BLOCK);
 
-	cpl_print("[ storage capacity %d MB ]\r\n");// storageCapacity_L / ((1024*1024) / BYTES_PER_NVME_BLOCK));
+	cpl_print("[ storage capacity %d MB ]\r\n");
 	cpl_print("[ ftl configuration complete. ]\r\n");
-	// uint32_t in_result = cpl_In32(0x400000); //CMD_DONE_ADDRESS
-	// if(in_result == 0x0){ //in_result == 0x0
-		// cpl_Out32(CMD_ADDRESS, 0x2); //command
-		// cpl_Out32(CMD_DONE_ADDRESS, 0); //CMD_DATA
-		// cpl_Out32(0x400000,0x1);
-		// reset_flag = 0x85465;
-	// cpl_print("ftl_config`s reset_flag : !! ");
-	// cpl_printint(reset_flag);
-		// cpl_print("ftl_config.c!!\r\n");
-		// cpl_printint(cpl_In32(0x400000));
-	// }
 }
 
 
 void InitChCtlReg()
 {
-	if(USER_CHANNELS < 1)
-		cpl_print("[WARNING] Configuration Error: Channel [WARNING]");
+	if(USER_CHANNELS < 1)	cpl_print("[WARNING] Configuration Error: Channel [WARNING]");
 
 	chCtlReg[0] = (V2FMCRegisters*) NSC_0_BASEADDR;
 
@@ -170,7 +107,7 @@ void InitNandArray()
 
 void CheckConfigRestriction()
 {
-	if(USER_CHANNELS > NSC_MAX_CHANNELS)
+	if(USER_CHANNELS > NSC_MAX_CHANNELS) // NAND Flash Channel Number 
 		cpl_print("[WARNING] Configuration Error: Channel [WARNING]");
 	if(USER_WAYS > NSC_MAX_WAYS)
 		cpl_print("[WARNING] Configuration Error: WAY [WARNING]");

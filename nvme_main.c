@@ -21,21 +21,23 @@ void nvme_main()
 	cpl_print("!!! Wait until FTL reset complete !!! \r\n");
 
 	//complete logic begin
-	uint32_t ENTRY_LIST_TABLE_START_ADDRESS = 0x17FDFF00; 											// varible declaration
+	uint32_t ENTRY_LIST_TABLE_START_ADDRESS = 0x17FDFF00; 											// TABLE_START_ADDRESS declaration
 	if(cpl_In32(0x17FFFFF0) == 85465){ 																					// value in the 0x17FFFFF0 address is 85465(reset_flag)
-		uint32_t list_entry_num = cpl_In32(0x17FFFFF4);														
-		while(list_entry_num){ 																										// if list_entry_num != 0 keep going
-			if(cpl_In32(ENTRY_LIST_TABLE_START_ADDRESS + 8) == 1){ 									// start address 부터 8byte를 이동하고, 해당 값이 1이면
-				list_entry_num -=1; 																									// list_entry_num 에서 1을 뺌.
+		uint32_t list_entry_num = cpl_In32(0x17FFFFF4);														// command queue entry number(waiting for execution)
+		while(list_entry_num){ 																										// list_entry_num is not 0																					
+			if(cpl_In32(ENTRY_LIST_TABLE_START_ADDRESS + 8) == 1){ 									
+				list_entry_num -=1; 																									
 				set_auto_nvme_cpl(cpl_In32(ENTRY_LIST_TABLE_START_ADDRESS),0x0,0x0);
-				cpl_Out32(ENTRY_LIST_TABLE_START_ADDRESS, 0);													// start_address에 0을 write
-				cpl_Out32(ENTRY_LIST_TABLE_START_ADDRESS + 4, 0);											// start_address에서 4byte를 이동하고, 해당 주소공간에 0을 writ
-				cpl_Out32(ENTRY_LIST_TABLE_START_ADDRESS + 8, 0); 										// start_address에서 8byte를 이동하고, 해당 주소공간에 0을 write
+				cpl_Out32(ENTRY_LIST_TABLE_START_ADDRESS, 0);													
+				cpl_Out32(ENTRY_LIST_TABLE_START_ADDRESS + 4, 0);											
+				cpl_Out32(ENTRY_LIST_TABLE_START_ADDRESS + 8, 0); 										
 			}
-			ENTRY_LIST_TABLE_START_ADDRESS += 12; 																	// start_address를 12byte 이동
-		}																																					// end of while, endless loop before (list_entry_num == 0)
-		cpl_Out32(0x17FFFFF4, list_entry_num);																		// 0x17FFFFF4 에 list_entry_num 값을 write(list_entry_num == 0)
-	}if(cpl_In32(0x17FFFFF0) != 85465)	InitFTL(); 															// initilize ftl components
+			ENTRY_LIST_TABLE_START_ADDRESS += 12; 																	// move to the next entry table
+		}																																					
+		cpl_Out32(0x17FFFFF4, list_entry_num);																		// after initialize the entry queue, rewrite the list_entry_num															
+	}
+	
+	if(cpl_In32(0x17FFFFF0) != 85465)	InitFTL(); 															// initilize ftl components
 	
 	cpl_print("Turn on the host PC \r\n");  
 	uint32_t counter_reset_reg_addr = 0x43C80014; // counter reset register address
@@ -46,14 +48,14 @@ void nvme_main()
 		exeLlr = 1;
 		if(g_nvmeTask.status == NVME_TASK_WAIT_CC_EN){
 			uint32_t ccEn;
-			ccEn = check_nvme_cc_en(); // status of nvme
+			ccEn = check_nvme_cc_en(); 												// status of nvme
 			if(ccEn == 1){
-				set_nvme_admin_queue(1, 1, 1); // 
+				set_nvme_admin_queue(1, 1, 1);  
 				set_nvme_csts_rdy(1);
-				g_nvmeTask.status = NVME_TASK_RUNNING; 	// update nvme status to running
+				g_nvmeTask.status = NVME_TASK_RUNNING; 					// update nvme status to running
 
-				if(cpl_In32(0x17FFFFF0) == 0){ 					// address of reset_flag
-					cpl_Out32(0x17FFFFF0, 85465); 				// write 85465 to reset_flag address
+				if(cpl_In32(0x17FFFFF0) == 0){ 									// address of reset_flag
+					cpl_Out32(0x17FFFFF0, 85465); 								// write 85465 to reset_flag address
 					cpl_Out32(counter_start_reg_addr, 1); 				// firmware_signal for counter start
 				}
 				cpl_print("\r\nNVMe ready!!!\r\n");

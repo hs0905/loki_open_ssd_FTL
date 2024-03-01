@@ -73,17 +73,17 @@ void dev_irq_init()
 {
 	DEV_IRQ_REG devReg;
 
-	devReg.dword = 0;
-	devReg.pcieLink = 1;
-	devReg.busMaster = 1;
-	devReg.pcieIrq = 1;
-	devReg.pcieMsi = 1;
-	devReg.pcieMsix = 1;
-	devReg.nvmeCcEn = 1;
-	devReg.nvmeCcShn = 1;
-	devReg.mAxiWriteErr = 1;
-	devReg.pcieMreqErr = 1;
-	devReg.pcieCpldErr = 1;
+	devReg.dword 					= 0; // reset all bits in the union
+	devReg.pcieLink 			= 1;
+	devReg.busMaster 			= 1;
+	devReg.pcieIrq 				= 1;
+	devReg.pcieMsi 				= 1;
+	devReg.pcieMsix 			= 1;
+	devReg.nvmeCcEn 			= 1;
+	devReg.nvmeCcShn 			= 1;
+	devReg.mAxiWriteErr 	= 1;
+	devReg.pcieMreqErr 		= 1;
+	devReg.pcieCpldErr 		= 1;
 	devReg.pcieCpldLenErr = 1;
 
 	IO_WRITE32(DEV_IRQ_MASK_REG_ADDR, devReg.dword);
@@ -283,16 +283,11 @@ void set_auto_nvme_cpl(uint32_t cmdSlotTag, uint32_t specific, uint32_t statusFi
 {
 	NVME_CPL_FIFO_REG nvmeReg;
 
-	nvmeReg.specific = specific;
-	nvmeReg.cmdSlotTag = cmdSlotTag;
-	nvmeReg.statusFieldWord = statusFieldWord;
-	nvmeReg.cplType = AUTO_CPL_TYPE;
+	nvmeReg.specific 					= specific;
+	nvmeReg.cmdSlotTag 				= cmdSlotTag;
+	nvmeReg.statusFieldWord 	= statusFieldWord;
+	nvmeReg.cplType 					= AUTO_CPL_TYPE;
 
-	// cpl_print("set_auto_nvme_cpl\r\n");
-	// cpl_printint(cmdSlotTag);
-	// cpl_printint(specific);
-	// cpl_printint(statusFieldWord);
-	//IO_WRITE32(NVME_CPL_FIFO_REG_ADDR, nvmeReg.dword[0]);
 	IO_WRITE32((NVME_CPL_FIFO_REG_ADDR + 4), nvmeReg.dword[1]);
 	IO_WRITE32((NVME_CPL_FIFO_REG_ADDR + 8), nvmeReg.dword[2]);
 }
