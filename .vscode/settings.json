@@ -9,5 +9,6 @@
         "time.h": "c",
         "nvme.h": "c",
         "request_queue.h": "c"
-    }
+    },
+    "cmake.configureOnOpen": true
 }

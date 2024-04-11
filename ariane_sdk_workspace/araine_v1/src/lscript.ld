@@ -11,13 +11,13 @@
 /*******************************************************************/
 
 _STACK_SIZE = DEFINED(_STACK_SIZE)? _STACK_SIZE : 0x2000;
-_HEAP_SIZE  = DEFINED(_HEAP_SIZE) ? _HEAP_SIZE  : 0x2000;
+_HEAP_SIZE  = DEFINED(_HEAP_SIZE) ? _HEAP_SIZE : 0x2000;
 
-_ABORT_STACK_SIZE       = DEFINED(_ABORT_STACK_SIZE)        ? _ABORT_STACK_SIZE     : 1024;
-_SUPERVISOR_STACK_SIZE  = DEFINED(_SUPERVISOR_STACK_SIZE)   ? _SUPERVISOR_STACK_SIZE: 2048;
-_IRQ_STACK_SIZE         = DEFINED(_IRQ_STACK_SIZE)          ? _IRQ_STACK_SIZE       : 1024;
-_FIQ_STACK_SIZE         = DEFINED(_FIQ_STACK_SIZE)          ? _FIQ_STACK_SIZE       : 1024;
-_UNDEF_STACK_SIZE       = DEFINED(_UNDEF_STACK_SIZE)        ? _UNDEF_STACK_SIZE     : 1024;
+_ABORT_STACK_SIZE       = DEFINED(_ABORT_STACK_SIZE)        ? _ABORT_STACK_SIZE        : 1024;
+_SUPERVISOR_STACK_SIZE  = DEFINED(_SUPERVISOR_STACK_SIZE)   ? _SUPERVISOR_STACK_SIZE   : 2048;
+_IRQ_STACK_SIZE         = DEFINED(_IRQ_STACK_SIZE)          ? _IRQ_STACK_SIZE          : 1024;
+_FIQ_STACK_SIZE         = DEFINED(_FIQ_STACK_SIZE)          ? _FIQ_STACK_SIZE          : 1024;
+_UNDEF_STACK_SIZE       = DEFINED(_UNDEF_STACK_SIZE)        ? _UNDEF_STACK_SIZE        : 1024;
 
 /* Define Memories in the system */ 
 
@@ -29,7 +29,6 @@ MEMORY
    axi_bram_ctrl_3_Mem0 : ORIGIN = 0x80010000,  LENGTH = 0x2000
    ps7_ram_1            : ORIGIN = 0xFFFF0000,  LENGTH = 0xFE00
    ariane_binary        : ORIGIN = 0x200000,    LENGTH = 0x100000  /*200000*/
-   /*ariane_binary_spare  : ORIGIN = 0x17FAFE00,  LENGTH = 0x100000 /*spare data for FTL crash*/
 }
 
 /* Specify the default entry point to the program */

@@ -1,14 +1,17 @@
 #include <stdint.h>
 // #include "ariane.h"
-#define STDIN_BASEADDRESS       0xE0001000
+#define STDIN_BASEADDRESS       0xE0001000 
 #define STDOUT_BASEADDRESS      0xE0001000
-#define XUARTPS_FIFO_OFFSET	0x0030U  /**< FIFO [7:0] */
-#define XUARTPS_SR_OFFSET	0x002CU  /**< Channel Status [14:0] */
-#define XUARTPS_SR_TXFULL	0x00000010U /**< TX FIFO full */
-#define CMD_DONE_ADDRESS 0x43C80000
-#define CMD_ADDRESS 0x43C80004
-#define DATA_ADDRESS_REGNUM 0x43C80008
-#define DATA_ADDRESS_BITNUM 0x43C8000C
+#define XUARTPS_FIFO_OFFSET			0x0030U  			/**< FIFO [7:0] */
+#define XUARTPS_SR_OFFSET				0x002CU  			/**< Channel Status [14:0] */
+#define XUARTPS_SR_TXFULL				0x00000010U 	/**< TX FIFO full */
+#define CMD_DONE_ADDRESS 				0x43C80000
+#define CMD_ADDRESS 						0x43C80004
+#define DATA_ADDRESS_REGNUM 		0x43C80008
+#define DATA_ADDRESS_BITNUM 		0x43C8000C
+#define XUARTPS_CR_TXRST 				0x00000002U 	/**< TX logic reset */
+#define XUARTPS_CR_RXRST 				0x00000001U 	/**< RX logic reset */
+#define XUARTPS_CR_OFFSET 			0x0000U		 		/**< Control Register */
 
 static __inline uint32_t Xil_In32(uintptr_t Addr)
 {
@@ -118,6 +121,20 @@ uint32_t cpl_In32(uintptr_t Addr)
 	volatile uint32_t *LocalAddr = (volatile uint32_t *)Addr;
 	return *LocalAddr;
 }
+
+void Uart_ResetTxFifo(uint32_t baseAddr)
+{
+	uint32_t ctrlReg;
+
+	ctrlReg = cpl_In32(baseAddr + XUARTPS_CR_OFFSET);
+
+	ctrlReg |= XUARTPS_CR_TXRST;
+	cpl_Out32(baseAddr + XUARTPS_CR_OFFSET, ctrlReg);
+
+	ctrlReg &= ~XUARTPS_CR_TXRST;
+	cpl_Out32(baseAddr + XUARTPS_CR_OFFSET, ctrlReg);
+}
+
 
 // void ICacheDisable(void){
 //     __asm__("csrw 0x7C0, 0");

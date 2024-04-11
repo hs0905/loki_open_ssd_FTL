@@ -29,4 +29,4 @@ void cpl_printint(const uint32_t val);
 void cpl_printint_no_enter(const uint32_t val);
 void cpl_Out32(uintptr_t Addr, uint32_t Value);
 uint32_t cpl_In32(uintptr_t Addr);
-
+// void Uart_ResetTxFifo(uint32_t baseAddr);

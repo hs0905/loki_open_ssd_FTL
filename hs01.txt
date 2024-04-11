@@ -30,7 +30,7 @@ Disassembly of section .text:
 0000000000200042 <main>:
   200042:	0020f537          	lui	a0,0x20f
   200046:	1141                	addi	sp,sp,-16
-  200048:	7c850513          	addi	a0,a0,1992 # 20f7c8 <nvme_main+0xe6c>
+  200048:	7e050513          	addi	a0,a0,2016 # 20f7e0 <nvme_main+0xe84>
   20004c:	e406                	sd	ra,8(sp)
   20004e:	e022                	sd	s0,0(sp)
   200050:	5c0040ef          	jal	ra,204610 <cpl_print>
@@ -44,7 +44,7 @@ Disassembly of section .text:
   20006c:	00210537          	lui	a0,0x210
   200070:	64800613          	li	a2,1608
   200074:	4581                	li	a1,0
-  200076:	ba050513          	addi	a0,a0,-1120 # 20fba0 <nvme_main+0x1244>
+  200076:	bd850513          	addi	a0,a0,-1064 # 20fbd8 <__bss_end>
   20007a:	54e0e0ef          	jal	ra,20e5c8 <cpl_memset>
   20007e:	4611                	li	a2,4
   200080:	4581                	li	a1,0
@@ -69,7 +69,7 @@ Disassembly of section .text:
   2000be:	e0050513          	addi	a0,a0,-512 # 17fbfe00 <g_nvmeTask+0x17dafcd0>
   2000c2:	5060e0ef          	jal	ra,20e5c8 <cpl_memset>
   2000c6:	0020f537          	lui	a0,0x20f
-  2000ca:	7d050513          	addi	a0,a0,2000 # 20f7d0 <nvme_main+0xe74>
+  2000ca:	7e850513          	addi	a0,a0,2024 # 20f7e8 <nvme_main+0xe8c>
   2000ce:	542040ef          	jal	ra,204610 <cpl_print>
   2000d2:	18000537          	lui	a0,0x18000
   2000d6:	1541                	addi	a0,a0,-16
@@ -80,8 +80,8 @@ Disassembly of section .text:
   2000e4:	00f50463          	beq	a0,a5,2000ec <main+0xaa>
   2000e8:	0d10c0ef          	jal	ra,20c9b8 <dev_irq_init>
   2000ec:	0710e0ef          	jal	ra,20e95c <nvme_main>
-  2000f0:	0020f537          	lui	a0,0x20f
-  2000f4:	7f050513          	addi	a0,a0,2032 # 20f7f0 <nvme_main+0xe94>
+  2000f0:	00210537          	lui	a0,0x210
+  2000f4:	80850513          	addi	a0,a0,-2040 # 20f808 <nvme_main+0xeac>
   2000f8:	518040ef          	jal	ra,204610 <cpl_print>
   2000fc:	60a2                	ld	ra,8(sp)
   2000fe:	6402                	ld	s0,0(sp)
@@ -220,7 +220,7 @@ Disassembly of section .text:
   200292:	30813823          	sd	s0,784(sp)
   200296:	1600                	addi	s0,sp,800
   200298:	0020f7b7          	lui	a5,0x20f
-  20029c:	da078513          	addi	a0,a5,-608 # 20eda0 <nvme_main+0x444>
+  20029c:	db878513          	addi	a0,a5,-584 # 20edb8 <nvme_main+0x45c>
   2002a0:	370040ef          	jal	ra,204610 <cpl_print>
   2002a4:	fe042423          	sw	zero,-24(s0)
   2002a8:	a091                	j	2002ec <RemapBadBlock+0x62>
@@ -542,7 +542,7 @@ Disassembly of section .text:
   200676:	6785                	lui	a5,0x1
   200678:	c8f765e3          	bltu	a4,a5,200302 <RemapBadBlock+0x78>
   20067c:	0020f7b7          	lui	a5,0x20f
-  200680:	dc078513          	addi	a0,a5,-576 # 20edc0 <nvme_main+0x464>
+  200680:	dd878513          	addi	a0,a5,-552 # 20edd8 <nvme_main+0x47c>
   200684:	78d030ef          	jal	ra,204610 <cpl_print>
   200688:	fe042023          	sw	zero,-32(s0)
   20068c:	fe042423          	sw	zero,-24(s0)
@@ -888,7 +888,7 @@ Disassembly of section .text:
   200a4a:	17fd                	addi	a5,a5,-1
   200a4c:	00f71863          	bne	a4,a5,200a5c <InitCurrentBlockOfDieMap+0x74>
   200a50:	0020f7b7          	lui	a5,0x20f
-  200a54:	de078513          	addi	a0,a5,-544 # 20ede0 <nvme_main+0x484>
+  200a54:	df878513          	addi	a0,a5,-520 # 20edf8 <nvme_main+0x49c>
   200a58:	3b9030ef          	jal	ra,204610 <cpl_print>
   200a5c:	fec42783          	lw	a5,-20(s0)
   200a60:	2785                	addiw	a5,a5,1
@@ -1137,7 +1137,7 @@ Disassembly of section .text:
   200d4e:	87ba                	mv	a5,a4
   200d50:	f6f42423          	sw	a5,-152(s0)
   200d54:	0020f7b7          	lui	a5,0x20f
-  200d58:	e1078513          	addi	a0,a5,-496 # 20ee10 <nvme_main+0x4b4>
+  200d58:	e2878513          	addi	a0,a5,-472 # 20ee28 <nvme_main+0x4cc>
   200d5c:	0b5030ef          	jal	ra,204610 <cpl_print>
   200d60:	fe042623          	sw	zero,-20(s0)
   200d64:	a531                	j	201370 <FindBadBlock+0x63c>
@@ -1505,7 +1505,7 @@ Disassembly of section .text:
   2011f4:	3160a0ef          	jal	ra,20b50a <SelectLowLevelReqQ>
   2011f8:	a839                	j	201216 <FindBadBlock+0x4e2>
   2011fa:	0020f7b7          	lui	a5,0x20f
-  2011fe:	e2078513          	addi	a0,a5,-480 # 20ee20 <nvme_main+0x4c4>
+  2011fe:	e3878513          	addi	a0,a5,-456 # 20ee38 <nvme_main+0x4dc>
   201202:	40e030ef          	jal	ra,204610 <cpl_print>
   201206:	fe846783          	lwu	a5,-24(s0)
   20120a:	ff040713          	addi	a4,s0,-16
@@ -1562,7 +1562,7 @@ Disassembly of section .text:
   2012ac:	f987c783          	lbu	a5,-104(a5)
   2012b0:	ef99                	bnez	a5,2012ce <FindBadBlock+0x59a>
   2012b2:	0020f7b7          	lui	a5,0x20f
-  2012b6:	e2078513          	addi	a0,a5,-480 # 20ee20 <nvme_main+0x4c4>
+  2012b6:	e3878513          	addi	a0,a5,-456 # 20ee38 <nvme_main+0x4dc>
   2012ba:	356030ef          	jal	ra,204610 <cpl_print>
   2012be:	fe846783          	lwu	a5,-24(s0)
   2012c2:	ff040713          	addi	a4,s0,-16
@@ -1996,7 +1996,7 @@ Disassembly of section .text:
   201810:	0007c783          	lbu	a5,0(a5) # ffffffffffffc000 <g_nvmeTask+0xffffffffffdebed0>
   201814:	e799                	bnez	a5,201822 <SaveBadBlockTable+0x494>
   201816:	0020f7b7          	lui	a5,0x20f
-  20181a:	e5878513          	addi	a0,a5,-424 # 20ee58 <nvme_main+0x4fc>
+  20181a:	e7078513          	addi	a0,a5,-400 # 20ee70 <nvme_main+0x514>
   20181e:	5f3020ef          	jal	ra,204610 <cpl_print>
   201822:	fec42783          	lw	a5,-20(s0)
   201826:	2785                	addiw	a5,a5,1
@@ -2142,7 +2142,7 @@ Disassembly of section .text:
   2019da:	f8e7f2e3          	bgeu	a5,a4,20195e <RecoverBadBlockTable+0x116>
   2019de:	a00d                	j	201a00 <RecoverBadBlockTable+0x1b8>
   2019e0:	0020f7b7          	lui	a5,0x20f
-  2019e4:	e8878513          	addi	a0,a5,-376 # 20ee88 <nvme_main+0x52c>
+  2019e4:	ea078513          	addi	a0,a5,-352 # 20eea0 <nvme_main+0x544>
   2019e8:	429020ef          	jal	ra,204610 <cpl_print>
   2019ec:	fec46783          	lwu	a5,-20(s0)
   2019f0:	ff040713          	addi	a4,s0,-16
@@ -2207,7 +2207,7 @@ Disassembly of section .text:
   201aa8:	e822                	sd	s0,16(sp)
   201aaa:	1000                	addi	s0,sp,32
   201aac:	0020f7b7          	lui	a5,0x20f
-  201ab0:	ec078513          	addi	a0,a5,-320 # 20eec0 <nvme_main+0x564>
+  201ab0:	ed878513          	addi	a0,a5,-296 # 20eed8 <nvme_main+0x57c>
   201ab4:	35d020ef          	jal	ra,204610 <cpl_print>
   201ab8:	fe042623          	sw	zero,-20(s0)
   201abc:	aa65                	j	201c74 <EraseTotalBlockSpace+0x1d0>
@@ -2352,7 +2352,7 @@ Disassembly of section .text:
   201c82:	e2e7fee3          	bgeu	a5,a4,201abe <EraseTotalBlockSpace+0x1a>
   201c86:	18f030ef          	jal	ra,205614 <SyncAllLowLevelReqDone>
   201c8a:	0020f7b7          	lui	a5,0x20f
-  201c8e:	ef878513          	addi	a0,a5,-264 # 20eef8 <nvme_main+0x59c>
+  201c8e:	f1078513          	addi	a0,a5,-240 # 20ef10 <nvme_main+0x5b4>
   201c92:	17f020ef          	jal	ra,204610 <cpl_print>
   201c96:	0001                	nop
   201c98:	60e2                	ld	ra,24(sp)
@@ -2366,7 +2366,7 @@ Disassembly of section .text:
   201ca4:	e822                	sd	s0,16(sp)
   201ca6:	1000                	addi	s0,sp,32
   201ca8:	0020f7b7          	lui	a5,0x20f
-  201cac:	f0078513          	addi	a0,a5,-256 # 20ef00 <nvme_main+0x5a4>
+  201cac:	f1878513          	addi	a0,a5,-232 # 20ef18 <nvme_main+0x5bc>
   201cb0:	161020ef          	jal	ra,204610 <cpl_print>
   201cb4:	fe042623          	sw	zero,-20(s0)
   201cb8:	aa81                	j	201e08 <EraseUserBlockSpace+0x168>
@@ -2480,7 +2480,7 @@ Disassembly of section .text:
   201e12:	eaf764e3          	bltu	a4,a5,201cba <EraseUserBlockSpace+0x1a>
   201e16:	7fe030ef          	jal	ra,205614 <SyncAllLowLevelReqDone>
   201e1a:	0020f7b7          	lui	a5,0x20f
-  201e1e:	ef878513          	addi	a0,a5,-264 # 20eef8 <nvme_main+0x59c>
+  201e1e:	f1078513          	addi	a0,a5,-240 # 20ef10 <nvme_main+0x5b4>
   201e22:	7ee020ef          	jal	ra,204610 <cpl_print>
   201e26:	0001                	nop
   201e28:	60e2                	ld	ra,24(sp)
@@ -2496,7 +2496,7 @@ Disassembly of section .text:
   201e38:	4785                	li	a5,1
   201e3a:	fef405a3          	sb	a5,-21(s0)
   201e3e:	0020f7b7          	lui	a5,0x20f
-  201e42:	f3078513          	addi	a0,a5,-208 # 20ef30 <nvme_main+0x5d4>
+  201e42:	f4878513          	addi	a0,a5,-184 # 20ef48 <nvme_main+0x5ec>
   201e46:	7ca020ef          	jal	ra,204610 <cpl_print>
   201e4a:	8b5fe0ef          	jal	ra,2006fe <InitDieMap>
   201e4e:	11144537          	lui	a0,0x11144
@@ -2570,7 +2570,7 @@ Disassembly of section .text:
   201f1c:	57fd                	li	a5,-1
   201f1e:	a039                	j	201f2c <AddrTransRead+0x58>
   201f20:	0020f7b7          	lui	a5,0x20f
-  201f24:	f6078513          	addi	a0,a5,-160 # 20ef60 <nvme_main+0x604>
+  201f24:	f7878513          	addi	a0,a5,-136 # 20ef78 <nvme_main+0x61c>
   201f28:	6e8020ef          	jal	ra,204610 <cpl_print>
   201f2c:	853e                	mv	a0,a5
   201f2e:	70a2                	ld	ra,40(sp)
@@ -2612,7 +2612,7 @@ Disassembly of section .text:
   201f94:	fec42783          	lw	a5,-20(s0)
   201f98:	a039                	j	201fa6 <AddrTransWrite+0x70>
   201f9a:	0020f7b7          	lui	a5,0x20f
-  201f9e:	fc078513          	addi	a0,a5,-64 # 20efc0 <nvme_main+0x664>
+  201f9e:	fd878513          	addi	a0,a5,-40 # 20efd8 <nvme_main+0x67c>
   201fa2:	66e020ef          	jal	ra,204610 <cpl_print>
   201fa6:	853e                	mv	a0,a5
   201fa8:	70a2                	ld	ra,40(sp)
@@ -2738,7 +2738,7 @@ Disassembly of section .text:
   202104:	00d79023          	sh	a3,0(a5)
   202108:	a869                	j	2021a2 <FindFreeVirtualSlice+0x1f2>
   20210a:	0020f7b7          	lui	a5,0x20f
-  20210e:	02078513          	addi	a0,a5,32 # 20f020 <nvme_main+0x6c4>
+  20210e:	03878513          	addi	a0,a5,56 # 20f038 <nvme_main+0x6dc>
   202112:	4fe020ef          	jal	ra,204610 <cpl_print>
   202116:	a071                	j	2021a2 <FindFreeVirtualSlice+0x1f2>
   202118:	002107b7          	lui	a5,0x210
@@ -2761,7 +2761,7 @@ Disassembly of section .text:
   202148:	08000793          	li	a5,128
   20214c:	04e7fb63          	bgeu	a5,a4,2021a2 <FindFreeVirtualSlice+0x1f2>
   202150:	0020f7b7          	lui	a5,0x20f
-  202154:	05878513          	addi	a0,a5,88 # 20f058 <nvme_main+0x6fc>
+  202154:	07078513          	addi	a0,a5,112 # 20f070 <nvme_main+0x714>
   202158:	4b8020ef          	jal	ra,204610 <cpl_print>
   20215c:	a099                	j	2021a2 <FindFreeVirtualSlice+0x1f2>
   20215e:	002107b7          	lui	a5,0x210
@@ -2784,7 +2784,7 @@ Disassembly of section .text:
   20218e:	08000793          	li	a5,128
   202192:	00e7f863          	bgeu	a5,a4,2021a2 <FindFreeVirtualSlice+0x1f2>
   202196:	0020f7b7          	lui	a5,0x20f
-  20219a:	05878513          	addi	a0,a5,88 # 20f058 <nvme_main+0x6fc>
+  20219a:	07078513          	addi	a0,a5,112 # 20f070 <nvme_main+0x714>
   20219e:	472020ef          	jal	ra,204610 <cpl_print>
   2021a2:	fec42783          	lw	a5,-20(s0)
   2021a6:	0077979b          	slliw	a5,a5,0x7
@@ -2919,7 +2919,7 @@ Disassembly of section .text:
   202310:	17fd                	addi	a5,a5,-1
   202312:	00f71863          	bne	a4,a5,202322 <FindFreeVirtualSliceForGc+0xac>
   202316:	0020f7b7          	lui	a5,0x20f
-  20231a:	09078513          	addi	a0,a5,144 # 20f090 <nvme_main+0x734>
+  20231a:	0a878513          	addi	a0,a5,168 # 20f0a8 <nvme_main+0x74c>
   20231e:	2f2020ef          	jal	ra,204610 <cpl_print>
   202322:	002107b7          	lui	a5,0x210
   202326:	bf07b683          	ld	a3,-1040(a5) # 20fbf0 <virtualDieMapPtr>
@@ -2975,7 +2975,7 @@ Disassembly of section .text:
   2023ba:	00d79023          	sh	a3,0(a5)
   2023be:	a891                	j	202412 <FindFreeVirtualSliceForGc+0x19c>
   2023c0:	0020f7b7          	lui	a5,0x20f
-  2023c4:	09078513          	addi	a0,a5,144 # 20f090 <nvme_main+0x734>
+  2023c4:	0a878513          	addi	a0,a5,168 # 20f0a8 <nvme_main+0x74c>
   2023c8:	248020ef          	jal	ra,204610 <cpl_print>
   2023cc:	a099                	j	202412 <FindFreeVirtualSliceForGc+0x19c>
   2023ce:	002107b7          	lui	a5,0x210
@@ -2998,7 +2998,7 @@ Disassembly of section .text:
   2023fe:	08000793          	li	a5,128
   202402:	00e7f863          	bgeu	a5,a4,202412 <FindFreeVirtualSliceForGc+0x19c>
   202406:	0020f7b7          	lui	a5,0x20f
-  20240a:	0c078513          	addi	a0,a5,192 # 20f0c0 <nvme_main+0x764>
+  20240a:	0d878513          	addi	a0,a5,216 # 20f0d8 <nvme_main+0x77c>
   20240e:	202020ef          	jal	ra,204610 <cpl_print>
   202412:	fec42783          	lw	a5,-20(s0)
   202416:	0077979b          	slliw	a5,a5,0x7
@@ -3715,7 +3715,7 @@ Disassembly of section .text:
   202bec:	17fd                	addi	a5,a5,-1
   202bee:	a2c5                	j	202dce <GetFromFbList+0x268>
   202bf0:	0020f7b7          	lui	a5,0x20f
-  202bf4:	0f878513          	addi	a0,a5,248 # 20f0f8 <nvme_main+0x79c>
+  202bf4:	11078513          	addi	a0,a5,272 # 20f110 <nvme_main+0x7b4>
   202bf8:	219010ef          	jal	ra,204610 <cpl_print>
   202bfc:	002107b7          	lui	a5,0x210
   202c00:	bf87b603          	ld	a2,-1032(a5) # 20fbf8 <virtualBlockMapPtr>
@@ -4757,7 +4757,7 @@ Disassembly of section .text:
   2038b8:	17fd                	addi	a5,a5,-1
   2038ba:	00f71863          	bne	a4,a5,2038ca <SelectiveGetFromBlockedByBufDepReqQ+0x2a>
   2038be:	0020f7b7          	lui	a5,0x20f
-  2038c2:	12878513          	addi	a0,a5,296 # 20f128 <nvme_main+0x7cc>
+  2038c2:	14078513          	addi	a0,a5,320 # 20f140 <nvme_main+0x7e4>
   2038c6:	54b000ef          	jal	ra,204610 <cpl_print>
   2038ca:	002107b7          	lui	a5,0x210
   2038ce:	e387b703          	ld	a4,-456(a5) # 20fe38 <reqPoolPtr>
@@ -5074,7 +5074,7 @@ Disassembly of section .text:
   203cb4:	17fd                	addi	a5,a5,-1
   203cb6:	00f71863          	bne	a4,a5,203cc6 <SelectiveGetFromBlockedByRowAddrDepReqQ+0x3a>
   203cba:	0020f7b7          	lui	a5,0x20f
-  203cbe:	12878513          	addi	a0,a5,296 # 20f128 <nvme_main+0x7cc>
+  203cbe:	14078513          	addi	a0,a5,320 # 20f140 <nvme_main+0x7e4>
   203cc2:	14f000ef          	jal	ra,204610 <cpl_print>
   203cc6:	002107b7          	lui	a5,0x210
   203cca:	e387b703          	ld	a4,-456(a5) # 20fe38 <reqPoolPtr>
@@ -5682,7 +5682,7 @@ Disassembly of section .text:
   204460:	17fd                	addi	a5,a5,-1
   204462:	00f71863          	bne	a4,a5,204472 <GetFromNandReqQ+0x5e>
   204466:	0020f7b7          	lui	a5,0x20f
-  20446a:	15078513          	addi	a0,a5,336 # 20f150 <nvme_main+0x7f4>
+  20446a:	16878513          	addi	a0,a5,360 # 20f168 <nvme_main+0x80c>
   20446e:	1a2000ef          	jal	ra,204610 <cpl_print>
   204472:	002107b7          	lui	a5,0x210
   204476:	e387b703          	ld	a4,-456(a5) # 20fe38 <reqPoolPtr>
@@ -5893,10 +5893,10 @@ Disassembly of section .text:
   2046c0:	8082                	ret
   2046c2:	38000737          	lui	a4,0x38000
   2046c6:	0e0005b7          	lui	a1,0xe000
-  2046ca:	0020f637          	lui	a2,0x20f
+  2046ca:	00210637          	lui	a2,0x210
   2046ce:	40b70713          	addi	a4,a4,1035 # 3800040b <g_nvmeTask+0x37df02db>
   2046d2:	10358593          	addi	a1,a1,259 # e000103 <g_nvmeTask+0xddeffd3>
-  2046d6:	7f860613          	addi	a2,a2,2040 # 20f7f8 <nvme_main+0xe9c>
+  2046d6:	81060613          	addi	a2,a2,-2032 # 20f810 <nvme_main+0xeb4>
   2046da:	03000693          	li	a3,48
   2046de:	070a                	slli	a4,a4,0x2
   2046e0:	0592                	slli	a1,a1,0x4
@@ -5962,7 +5962,7 @@ Disassembly of section .text:
   204780:	00210637          	lui	a2,0x210
   204784:	40b70713          	addi	a4,a4,1035 # 3800040b <g_nvmeTask+0x37df02db>
   204788:	10358593          	addi	a1,a1,259 # e000103 <g_nvmeTask+0xddeffd3>
-  20478c:	80060613          	addi	a2,a2,-2048 # 20f800 <nvme_main+0xea4>
+  20478c:	81860613          	addi	a2,a2,-2024 # 20f818 <nvme_main+0xebc>
   204790:	03000693          	li	a3,48
   204794:	070a                	slli	a4,a4,0x2
   204796:	0592                	slli	a1,a1,0x4
@@ -6404,7 +6404,7 @@ Disassembly of section .text:
   204cd6:	17fd                	addi	a5,a5,-1
   204cd8:	00f71863          	bne	a4,a5,204ce8 <AllocateDataBuf+0x34>
   204cdc:	0020f7b7          	lui	a5,0x20f
-  204ce0:	19078513          	addi	a0,a5,400 # 20f190 <nvme_main+0x834>
+  204ce0:	1a878513          	addi	a0,a5,424 # 20f1a8 <nvme_main+0x84c>
   204ce4:	92dff0ef          	jal	ra,204610 <cpl_print>
   204ce8:	002107b7          	lui	a5,0x210
   204cec:	0587b703          	ld	a4,88(a5) # 210058 <dataBufMapPtr>
@@ -8103,7 +8103,7 @@ Disassembly of section .text:
   2060d0:	78f000ef          	jal	ra,20705e <PutToNandWriteList>
   2060d4:	a039                	j	2060e2 <PutToNandWayPriorityTable+0x14a>
   2060d6:	0020f7b7          	lui	a5,0x20f
-  2060da:	1c878513          	addi	a0,a5,456 # 20f1c8 <nvme_main+0x86c>
+  2060da:	1e078513          	addi	a0,a5,480 # 20f1e0 <nvme_main+0x884>
   2060de:	d32fe0ef          	jal	ra,204610 <cpl_print>
   2060e2:	0001                	nop
   2060e4:	60e2                	ld	ra,24(sp)
@@ -11730,7 +11730,7 @@ Disassembly of section .text:
   208892:	08c010ef          	jal	ra,20991e <V2FSetFeaturesSync>
   208896:	a039                	j	2088a4 <IssueNandReq+0x3b6>
   208898:	0020f7b7          	lui	a5,0x20f
-  20889c:	1f078513          	addi	a0,a5,496 # 20f1f0 <nvme_main+0x894>
+  20889c:	20878513          	addi	a0,a5,520 # 20f208 <nvme_main+0x8ac>
   2088a0:	d71fb0ef          	jal	ra,204610 <cpl_print>
   2088a4:	0001                	nop
   2088a6:	60a6                	ld	ra,72(sp)
@@ -12009,7 +12009,7 @@ Disassembly of section .text:
   208bfc:	fef42023          	sw	a5,-32(s0)
   208c00:	a039                	j	208c0e <GenerateNandRowAddr+0x360>
   208c02:	0020f7b7          	lui	a5,0x20f
-  208c06:	22078513          	addi	a0,a5,544 # 20f220 <nvme_main+0x8c4>
+  208c06:	23878513          	addi	a0,a5,568 # 20f238 <nvme_main+0x8dc>
   208c0a:	a07fb0ef          	jal	ra,204610 <cpl_print>
   208c0e:	fe842783          	lw	a5,-24(s0)
   208c12:	2781                	sext.w	a5,a5
@@ -12176,11 +12176,11 @@ Disassembly of section .text:
   208df6:	2781                	sext.w	a5,a5
   208df8:	a831                	j	208e14 <GenerateDataBufAddr+0x1c0>
   208dfa:	0020f7b7          	lui	a5,0x20f
-  208dfe:	25078513          	addi	a0,a5,592 # 20f250 <nvme_main+0x8f4>
+  208dfe:	26878513          	addi	a0,a5,616 # 20f268 <nvme_main+0x90c>
   208e02:	80ffb0ef          	jal	ra,204610 <cpl_print>
   208e06:	a039                	j	208e14 <GenerateDataBufAddr+0x1c0>
   208e08:	0020f7b7          	lui	a5,0x20f
-  208e0c:	28078513          	addi	a0,a5,640 # 20f280 <nvme_main+0x924>
+  208e0c:	29878513          	addi	a0,a5,664 # 20f298 <nvme_main+0x93c>
   208e10:	801fb0ef          	jal	ra,204610 <cpl_print>
   208e14:	853e                	mv	a0,a5
   208e16:	60e2                	ld	ra,24(sp)
@@ -12317,11 +12317,11 @@ Disassembly of section .text:
   208fa2:	2781                	sext.w	a5,a5
   208fa4:	a831                	j	208fc0 <GenerateSpareDataBufAddr+0x1a2>
   208fa6:	0020f7b7          	lui	a5,0x20f
-  208faa:	25078513          	addi	a0,a5,592 # 20f250 <nvme_main+0x8f4>
+  208faa:	26878513          	addi	a0,a5,616 # 20f268 <nvme_main+0x90c>
   208fae:	e62fb0ef          	jal	ra,204610 <cpl_print>
   208fb2:	a039                	j	208fc0 <GenerateSpareDataBufAddr+0x1a2>
   208fb4:	0020f7b7          	lui	a5,0x20f
-  208fb8:	28078513          	addi	a0,a5,640 # 20f280 <nvme_main+0x924>
+  208fb8:	29878513          	addi	a0,a5,664 # 20f298 <nvme_main+0x93c>
   208fbc:	e54fb0ef          	jal	ra,204610 <cpl_print>
   208fc0:	853e                	mv	a0,a5
   208fc2:	60e2                	ld	ra,24(sp)
@@ -12568,7 +12568,7 @@ Disassembly of section .text:
   209278:	4785                	li	a5,1
   20927a:	a801                	j	20928a <CheckReqStatus+0x2c0>
   20927c:	0020f7b7          	lui	a5,0x20f
-  209280:	2a878513          	addi	a0,a5,680 # 20f2a8 <nvme_main+0x94c>
+  209280:	2c078513          	addi	a0,a5,704 # 20f2c0 <nvme_main+0x964>
   209284:	b8cfb0ef          	jal	ra,204610 <cpl_print>
   209288:	4781                	li	a5,0
   20928a:	853e                	mv	a0,a5
@@ -12867,7 +12867,7 @@ Disassembly of section .text:
   209604:	47a1                	li	a5,8
   209606:	00f71963          	bne	a4,a5,209618 <ExecuteNandReq+0x27e>
   20960a:	0020f7b7          	lui	a5,0x20f
-  20960e:	2e078513          	addi	a0,a5,736 # 20f2e0 <nvme_main+0x984>
+  20960e:	2f878513          	addi	a0,a5,760 # 20f2f8 <nvme_main+0x99c>
   209612:	ffffa0ef          	jal	ra,204610 <cpl_print>
   209616:	a8a9                	j	209670 <ExecuteNandReq+0x2d6>
   209618:	002107b7          	lui	a5,0x210
@@ -12881,7 +12881,7 @@ Disassembly of section .text:
   209634:	47a5                	li	a5,9
   209636:	00f71963          	bne	a4,a5,209648 <ExecuteNandReq+0x2ae>
   20963a:	0020f7b7          	lui	a5,0x20f
-  20963e:	30078513          	addi	a0,a5,768 # 20f300 <nvme_main+0x9a4>
+  20963e:	31878513          	addi	a0,a5,792 # 20f318 <nvme_main+0x9bc>
   209642:	fcffa0ef          	jal	ra,204610 <cpl_print>
   209646:	a02d                	j	209670 <ExecuteNandReq+0x2d6>
   209648:	002107b7          	lui	a5,0x210
@@ -12893,7 +12893,7 @@ Disassembly of section .text:
   20965e:	0017c783          	lbu	a5,1(a5)
   209662:	e799                	bnez	a5,209670 <ExecuteNandReq+0x2d6>
   209664:	0020f7b7          	lui	a5,0x20f
-  209668:	32078513          	addi	a0,a5,800 # 20f320 <nvme_main+0x9c4>
+  209668:	33878513          	addi	a0,a5,824 # 20f338 <nvme_main+0x9dc>
   20966c:	fa5fa0ef          	jal	ra,204610 <cpl_print>
   209670:	fec42783          	lw	a5,-20(s0)
   209674:	853e                	mv	a0,a5
@@ -13005,7 +13005,7 @@ Disassembly of section .text:
   2097c8:	87aa                	mv	a5,a0
   2097ca:	fef42423          	sw	a5,-24(s0)
   2097ce:	0020f7b7          	lui	a5,0x20f
-  2097d2:	34078513          	addi	a0,a5,832 # 20f340 <nvme_main+0x9e4>
+  2097d2:	35878513          	addi	a0,a5,856 # 20f358 <nvme_main+0x9fc>
   2097d6:	e3bfa0ef          	jal	ra,204610 <cpl_print>
   2097da:	fe842703          	lw	a4,-24(s0)
   2097de:	002007b7          	lui	a5,0x200
@@ -13071,7 +13071,7 @@ Disassembly of section .text:
   20989c:	2781                	sext.w	a5,a5
   20989e:	cb81                	beqz	a5,2098ae <ExecuteNandReq+0x514>
   2098a0:	0020f7b7          	lui	a5,0x20f
-  2098a4:	39878513          	addi	a0,a5,920 # 20f398 <nvme_main+0xa3c>
+  2098a4:	3b078513          	addi	a0,a5,944 # 20f3b0 <nvme_main+0xa54>
   2098a8:	d69fa0ef          	jal	ra,204610 <cpl_print>
   2098ac:	a011                	j	2098b0 <ExecuteNandReq+0x516>
   2098ae:	0001                	nop
@@ -13520,10 +13520,10 @@ Disassembly of section .text:
   209d46:	002107b7          	lui	a5,0x210
   209d4a:	0ae7a423          	sw	a4,168(a5) # 2100a8 <storageCapacity_L>
   209d4e:	0020f7b7          	lui	a5,0x20f
-  209d52:	3c078513          	addi	a0,a5,960 # 20f3c0 <nvme_main+0xa64>
+  209d52:	3d878513          	addi	a0,a5,984 # 20f3d8 <nvme_main+0xa7c>
   209d56:	8bbfa0ef          	jal	ra,204610 <cpl_print>
   209d5a:	0020f7b7          	lui	a5,0x20f
-  209d5e:	3e078513          	addi	a0,a5,992 # 20f3e0 <nvme_main+0xa84>
+  209d5e:	3f878513          	addi	a0,a5,1016 # 20f3f8 <nvme_main+0xa9c>
   209d62:	8affa0ef          	jal	ra,204610 <cpl_print>
   209d66:	0001                	nop
   209d68:	60a2                	ld	ra,8(sp)
@@ -13837,7 +13837,7 @@ Disassembly of section .text:
   20a13e:	cae7ffe3          	bgeu	a5,a4,209dfc <InitNandArray+0xe>
   20a142:	cd2fb0ef          	jal	ra,205614 <SyncAllLowLevelReqDone>
   20a146:	0020f7b7          	lui	a5,0x20f
-  20a14a:	40878513          	addi	a0,a5,1032 # 20f408 <nvme_main+0xaac>
+  20a14a:	42078513          	addi	a0,a5,1056 # 20f420 <nvme_main+0xac4>
   20a14e:	cc2fa0ef          	jal	ra,204610 <cpl_print>
   20a152:	0001                	nop
   20a154:	60e2                	ld	ra,24(sp)
@@ -13986,7 +13986,7 @@ Disassembly of section .text:
   20a2e0:	fcf42e23          	sw	a5,-36(s0)
   20a2e4:	a039                	j	20a2f2 <ReqTransNvmeToSlice+0x8e>
   20a2e6:	0020f7b7          	lui	a5,0x20f
-  20a2ea:	43078513          	addi	a0,a5,1072 # 20f430 <nvme_main+0xad4>
+  20a2ea:	44878513          	addi	a0,a5,1096 # 20f448 <nvme_main+0xaec>
   20a2ee:	b22fa0ef          	jal	ra,204610 <cpl_print>
   20a2f2:	fb842783          	lw	a5,-72(s0)
   20a2f6:	8b8d                	andi	a5,a5,3
@@ -14756,7 +14756,7 @@ Disassembly of section .text:
   20acce:	00e780a3          	sb	a4,1(a5)
   20acd2:	a039                	j	20ace0 <ReqTransSliceToLowLevel+0x1e2>
   20acd4:	0020f7b7          	lui	a5,0x20f
-  20acd8:	46078513          	addi	a0,a5,1120 # 20f460 <nvme_main+0xb04>
+  20acd8:	47878513          	addi	a0,a5,1144 # 20f478 <nvme_main+0xb1c>
   20acdc:	935f90ef          	jal	ra,204610 <cpl_print>
   20ace0:	002107b7          	lui	a5,0x210
   20ace4:	e387b703          	ld	a4,-456(a5) # 20fe38 <reqPoolPtr>
@@ -14881,7 +14881,7 @@ Disassembly of section .text:
   20ae48:	fef42023          	sw	a5,-32(s0)
   20ae4c:	a039                	j	20ae5a <CheckRowAddrDep+0xc4>
   20ae4e:	0020f7b7          	lui	a5,0x20f
-  20ae52:	49078513          	addi	a0,a5,1168 # 20f490 <nvme_main+0xb34>
+  20ae52:	4a878513          	addi	a0,a5,1192 # 20f4a8 <nvme_main+0xb4c>
   20ae56:	fbaf90ef          	jal	ra,204610 <cpl_print>
   20ae5a:	002107b7          	lui	a5,0x210
   20ae5e:	e387b703          	ld	a4,-456(a5) # 20fe38 <reqPoolPtr>
@@ -15043,7 +15043,7 @@ Disassembly of section .text:
   20b00c:	4785                	li	a5,1
   20b00e:	ac05                	j	20b23e <CheckRowAddrDep+0x4a8>
   20b010:	0020f7b7          	lui	a5,0x20f
-  20b014:	4c878513          	addi	a0,a5,1224 # 20f4c8 <nvme_main+0xb6c>
+  20b014:	4e078513          	addi	a0,a5,1248 # 20f4e0 <nvme_main+0xb84>
   20b018:	df8f90ef          	jal	ra,204610 <cpl_print>
   20b01c:	a405                	j	20b23c <CheckRowAddrDep+0x4a6>
   20b01e:	002107b7          	lui	a5,0x210
@@ -15235,11 +15235,11 @@ Disassembly of section .text:
   20b21c:	4785                	li	a5,1
   20b21e:	00f70f63          	beq	a4,a5,20b23c <CheckRowAddrDep+0x4a6>
   20b222:	0020f7b7          	lui	a5,0x20f
-  20b226:	4c878513          	addi	a0,a5,1224 # 20f4c8 <nvme_main+0xb6c>
+  20b226:	4e078513          	addi	a0,a5,1248 # 20f4e0 <nvme_main+0xb84>
   20b22a:	be6f90ef          	jal	ra,204610 <cpl_print>
   20b22e:	a039                	j	20b23c <CheckRowAddrDep+0x4a6>
   20b230:	0020f7b7          	lui	a5,0x20f
-  20b234:	50078513          	addi	a0,a5,1280 # 20f500 <nvme_main+0xba4>
+  20b234:	51878513          	addi	a0,a5,1304 # 20f518 <nvme_main+0xbbc>
   20b238:	bd8f90ef          	jal	ra,204610 <cpl_print>
   20b23c:	4781                	li	a5,0
   20b23e:	853e                	mv	a0,a5
@@ -15303,7 +15303,7 @@ Disassembly of section .text:
   20b2f2:	fef42023          	sw	a5,-32(s0)
   20b2f6:	a039                	j	20b304 <UpdateRowAddrDepTableForBufBlockedReq+0xbc>
   20b2f8:	0020f7b7          	lui	a5,0x20f
-  20b2fc:	49078513          	addi	a0,a5,1168 # 20f490 <nvme_main+0xb34>
+  20b2fc:	4a878513          	addi	a0,a5,1192 # 20f4a8 <nvme_main+0xb4c>
   20b300:	b10f90ef          	jal	ra,204610 <cpl_print>
   20b304:	002107b7          	lui	a5,0x210
   20b308:	e387b703          	ld	a4,-456(a5) # 20fe38 <reqPoolPtr>
@@ -15599,7 +15599,7 @@ Disassembly of section .text:
   20b662:	fef42423          	sw	a5,-24(s0)
   20b666:	a039                	j	20b674 <SelectLowLevelReqQ+0x16a>
   20b668:	0020f7b7          	lui	a5,0x20f
-  20b66c:	49078513          	addi	a0,a5,1168 # 20f490 <nvme_main+0xb34>
+  20b66c:	4a878513          	addi	a0,a5,1192 # 20f4a8 <nvme_main+0xb4c>
   20b670:	fa1f80ef          	jal	ra,204610 <cpl_print>
   20b674:	002107b7          	lui	a5,0x210
   20b678:	e387b703          	ld	a4,-456(a5) # 20fe38 <reqPoolPtr>
@@ -15644,7 +15644,7 @@ Disassembly of section .text:
   20b6f0:	b9af80ef          	jal	ra,203a8a <PutToBlockedByRowAddrDepReqQ>
   20b6f4:	a239                	j	20b802 <SelectLowLevelReqQ+0x2f8>
   20b6f6:	0020f7b7          	lui	a5,0x20f
-  20b6fa:	53078513          	addi	a0,a5,1328 # 20f530 <nvme_main+0xbd4>
+  20b6fa:	54878513          	addi	a0,a5,1352 # 20f548 <nvme_main+0xbec>
   20b6fe:	f13f80ef          	jal	ra,204610 <cpl_print>
   20b702:	a201                	j	20b802 <SelectLowLevelReqQ+0x2f8>
   20b704:	002107b7          	lui	a5,0x210
@@ -15667,11 +15667,11 @@ Disassembly of section .text:
   20b73a:	ad9f80ef          	jal	ra,204212 <PutToNandReqQ>
   20b73e:	a0d1                	j	20b802 <SelectLowLevelReqQ+0x2f8>
   20b740:	0020f7b7          	lui	a5,0x20f
-  20b744:	56078513          	addi	a0,a5,1376 # 20f560 <nvme_main+0xc04>
+  20b744:	57878513          	addi	a0,a5,1400 # 20f578 <nvme_main+0xc1c>
   20b748:	ec9f80ef          	jal	ra,204610 <cpl_print>
   20b74c:	a85d                	j	20b802 <SelectLowLevelReqQ+0x2f8>
   20b74e:	0020f7b7          	lui	a5,0x20f
-  20b752:	59078513          	addi	a0,a5,1424 # 20f590 <nvme_main+0xc34>
+  20b752:	5a878513          	addi	a0,a5,1448 # 20f5a8 <nvme_main+0xc4c>
   20b756:	ebbf80ef          	jal	ra,204610 <cpl_print>
   20b75a:	a065                	j	20b802 <SelectLowLevelReqQ+0x2f8>
   20b75c:	fe442783          	lw	a5,-28(s0)
@@ -15715,14 +15715,14 @@ Disassembly of section .text:
   20b7d4:	4785                	li	a5,1
   20b7d6:	02f70563          	beq	a4,a5,20b800 <SelectLowLevelReqQ+0x2f6>
   20b7da:	0020f7b7          	lui	a5,0x20f
-  20b7de:	53078513          	addi	a0,a5,1328 # 20f530 <nvme_main+0xbd4>
+  20b7de:	54878513          	addi	a0,a5,1352 # 20f548 <nvme_main+0xbec>
   20b7e2:	e2ff80ef          	jal	ra,204610 <cpl_print>
   20b7e6:	fcc42783          	lw	a5,-52(s0)
   20b7ea:	853e                	mv	a0,a5
   20b7ec:	f47f70ef          	jal	ra,203732 <PutToBlockedByBufDepReqQ>
   20b7f0:	a809                	j	20b802 <SelectLowLevelReqQ+0x2f8>
   20b7f2:	0020f7b7          	lui	a5,0x20f
-  20b7f6:	53078513          	addi	a0,a5,1328 # 20f530 <nvme_main+0xbd4>
+  20b7f6:	54878513          	addi	a0,a5,1352 # 20f548 <nvme_main+0xbec>
   20b7fa:	e17f80ef          	jal	ra,204610 <cpl_print>
   20b7fe:	a011                	j	20b802 <SelectLowLevelReqQ+0x2f8>
   20b800:	0001                	nop
@@ -15945,7 +15945,7 @@ Disassembly of section .text:
   20bab0:	fef42223          	sw	a5,-28(s0)
   20bab4:	a039                	j	20bac2 <ReleaseBlockedByBufDepReq+0x2b8>
   20bab6:	0020f7b7          	lui	a5,0x20f
-  20baba:	49078513          	addi	a0,a5,1168 # 20f490 <nvme_main+0xb34>
+  20baba:	4a878513          	addi	a0,a5,1192 # 20f4a8 <nvme_main+0xb4c>
   20babe:	b53f80ef          	jal	ra,204610 <cpl_print>
   20bac2:	002107b7          	lui	a5,0x210
   20bac6:	e387b703          	ld	a4,-456(a5) # 20fe38 <reqPoolPtr>
@@ -15990,7 +15990,7 @@ Disassembly of section .text:
   20bb3e:	f4df70ef          	jal	ra,203a8a <PutToBlockedByRowAddrDepReqQ>
   20bb42:	a8a1                	j	20bb9a <ReleaseBlockedByBufDepReq+0x390>
   20bb44:	0020f7b7          	lui	a5,0x20f
-  20bb48:	53078513          	addi	a0,a5,1328 # 20f530 <nvme_main+0xbd4>
+  20bb48:	54878513          	addi	a0,a5,1352 # 20f548 <nvme_main+0xbec>
   20bb4c:	ac5f80ef          	jal	ra,204610 <cpl_print>
   20bb50:	a0a9                	j	20bb9a <ReleaseBlockedByBufDepReq+0x390>
   20bb52:	002107b7          	lui	a5,0x210
@@ -16013,7 +16013,7 @@ Disassembly of section .text:
   20bb88:	e8af80ef          	jal	ra,204212 <PutToNandReqQ>
   20bb8c:	a039                	j	20bb9a <ReleaseBlockedByBufDepReq+0x390>
   20bb8e:	0020f7b7          	lui	a5,0x20f
-  20bb92:	56078513          	addi	a0,a5,1376 # 20f560 <nvme_main+0xc04>
+  20bb92:	57878513          	addi	a0,a5,1400 # 20f578 <nvme_main+0xc1c>
   20bb96:	a7bf80ef          	jal	ra,204610 <cpl_print>
   20bb9a:	0001                	nop
   20bb9c:	70e2                	ld	ra,56(sp)
@@ -16092,11 +16092,11 @@ Disassembly of section .text:
   20bc76:	2781                	sext.w	a5,a5
   20bc78:	cf91                	beqz	a5,20bc94 <ReleaseBlockedByRowAddrDepReq+0xf0>
   20bc7a:	0020f7b7          	lui	a5,0x20f
-  20bc7e:	53078513          	addi	a0,a5,1328 # 20f530 <nvme_main+0xbd4>
+  20bc7e:	54878513          	addi	a0,a5,1352 # 20f548 <nvme_main+0xbec>
   20bc82:	98ff80ef          	jal	ra,204610 <cpl_print>
   20bc86:	a039                	j	20bc94 <ReleaseBlockedByRowAddrDepReq+0xf0>
   20bc88:	0020f7b7          	lui	a5,0x20f
-  20bc8c:	56078513          	addi	a0,a5,1376 # 20f560 <nvme_main+0xc04>
+  20bc8c:	57878513          	addi	a0,a5,1400 # 20f578 <nvme_main+0xc1c>
   20bc90:	981f80ef          	jal	ra,204610 <cpl_print>
   20bc94:	fe842783          	lw	a5,-24(s0)
   20bc98:	fef42623          	sw	a5,-20(s0)
@@ -16267,7 +16267,7 @@ Disassembly of section .text:
   20bebc:	d398                	sw	a4,32(a5)
   20bebe:	a039                	j	20becc <IssueNvmeDmaReq+0x214>
   20bec0:	0020f7b7          	lui	a5,0x20f
-  20bec4:	50078513          	addi	a0,a5,1280 # 20f500 <nvme_main+0xba4>
+  20bec4:	51878513          	addi	a0,a5,1304 # 20f518 <nvme_main+0xbbc>
   20bec8:	f48f80ef          	jal	ra,204610 <cpl_print>
   20becc:	0001                	nop
   20bece:	70a2                	ld	ra,40(sp)
@@ -16512,7 +16512,7 @@ Disassembly of section .text:
   20c17c:	0141                	addi	sp,sp,16
   20c17e:	8082                	ret
   20c180:	00210537          	lui	a0,0x210
-  20c184:	80850513          	addi	a0,a0,-2040 # 20f808 <nvme_main+0xeac>
+  20c184:	82050513          	addi	a0,a0,-2016 # 20f820 <nvme_main+0xec4>
   20c188:	c88f80ef          	jal	ra,204610 <cpl_print>
   20c18c:	60a2                	ld	ra,8(sp)
   20c18e:	8522                	mv	a0,s0
@@ -16821,7 +16821,7 @@ Disassembly of section .text:
   20c4f2:	fe442783          	lw	a5,-28(s0)
   20c4f6:	cb81                	beqz	a5,20c506 <handle_nvme_io_read+0xb0>
   20c4f8:	0020f7b7          	lui	a5,0x20f
-  20c4fc:	5c078513          	addi	a0,a5,1472 # 20f5c0 <nvme_main+0xc64>
+  20c4fc:	5d878513          	addi	a0,a5,1496 # 20f5d8 <nvme_main+0xc7c>
   20c500:	910f80ef          	jal	ra,204610 <cpl_print>
   20c504:	a001                	j	20c504 <handle_nvme_io_read+0xae>
   20c506:	fd043783          	ld	a5,-48(s0)
@@ -16855,7 +16855,7 @@ Disassembly of section .text:
   20c552:	2781                	sext.w	a5,a5
   20c554:	cb81                	beqz	a5,20c564 <handle_nvme_io_read+0x10e>
   20c556:	0020f7b7          	lui	a5,0x20f
-  20c55a:	5e078513          	addi	a0,a5,1504 # 20f5e0 <nvme_main+0xc84>
+  20c55a:	5f878513          	addi	a0,a5,1528 # 20f5f8 <nvme_main+0xc9c>
   20c55e:	8b2f80ef          	jal	ra,204610 <cpl_print>
   20c562:	a001                	j	20c562 <handle_nvme_io_read+0x10c>
   20c564:	fd043783          	ld	a5,-48(s0)
@@ -16889,7 +16889,7 @@ Disassembly of section .text:
   20c5b2:	67c1                	lui	a5,0x10
   20c5b4:	00f76963          	bltu	a4,a5,20c5c6 <handle_nvme_io_read+0x170>
   20c5b8:	0020f7b7          	lui	a5,0x20f
-  20c5bc:	60078513          	addi	a0,a5,1536 # 20f600 <nvme_main+0xca4>
+  20c5bc:	61878513          	addi	a0,a5,1560 # 20f618 <nvme_main+0xcbc>
   20c5c0:	850f80ef          	jal	ra,204610 <cpl_print>
   20c5c4:	a001                	j	20c5c4 <handle_nvme_io_read+0x16e>
   20c5c6:	fe042703          	lw	a4,-32(s0)
@@ -16961,7 +16961,7 @@ Disassembly of section .text:
   20c682:	fe442783          	lw	a5,-28(s0)
   20c686:	cb81                	beqz	a5,20c696 <handle_nvme_io_write+0xb0>
   20c688:	0020f7b7          	lui	a5,0x20f
-  20c68c:	62078513          	addi	a0,a5,1568 # 20f620 <nvme_main+0xcc4>
+  20c68c:	63878513          	addi	a0,a5,1592 # 20f638 <nvme_main+0xcdc>
   20c690:	f81f70ef          	jal	ra,204610 <cpl_print>
   20c694:	a001                	j	20c694 <handle_nvme_io_write+0xae>
   20c696:	fd043783          	ld	a5,-48(s0)
@@ -16995,7 +16995,7 @@ Disassembly of section .text:
   20c6e2:	2781                	sext.w	a5,a5
   20c6e4:	cb81                	beqz	a5,20c6f4 <handle_nvme_io_write+0x10e>
   20c6e6:	0020f7b7          	lui	a5,0x20f
-  20c6ea:	64078513          	addi	a0,a5,1600 # 20f640 <nvme_main+0xce4>
+  20c6ea:	65878513          	addi	a0,a5,1624 # 20f658 <nvme_main+0xcfc>
   20c6ee:	f23f70ef          	jal	ra,204610 <cpl_print>
   20c6f2:	a001                	j	20c6f2 <handle_nvme_io_write+0x10c>
   20c6f4:	fd043783          	ld	a5,-48(s0)
@@ -17029,7 +17029,7 @@ Disassembly of section .text:
   20c742:	67c1                	lui	a5,0x10
   20c744:	00f76963          	bltu	a4,a5,20c756 <handle_nvme_io_write+0x170>
   20c748:	0020f7b7          	lui	a5,0x20f
-  20c74c:	66078513          	addi	a0,a5,1632 # 20f660 <nvme_main+0xd04>
+  20c74c:	67878513          	addi	a0,a5,1656 # 20f678 <nvme_main+0xd1c>
   20c750:	ec1f70ef          	jal	ra,204610 <cpl_print>
   20c754:	a001                	j	20c754 <handle_nvme_io_write+0x16e>
   20c756:	fe042703          	lw	a4,-32(s0)
@@ -17228,10 +17228,10 @@ Disassembly of section .text:
   20c98e:	542000ef          	jal	ra,20ced0 <set_auto_nvme_cpl>
   20c992:	a831                	j	20c9ae <handle_nvme_io_cmd+0x162>
   20c994:	0020f7b7          	lui	a5,0x20f
-  20c998:	68078513          	addi	a0,a5,1664 # 20f680 <nvme_main+0xd24>
+  20c998:	69878513          	addi	a0,a5,1688 # 20f698 <nvme_main+0xd3c>
   20c99c:	c75f70ef          	jal	ra,204610 <cpl_print>
   20c9a0:	0020f7b7          	lui	a5,0x20f
-  20c9a4:	6a878513          	addi	a0,a5,1704 # 20f6a8 <nvme_main+0xd4c>
+  20c9a4:	6c078513          	addi	a0,a5,1728 # 20f6c0 <nvme_main+0xd64>
   20c9a8:	c69f70ef          	jal	ra,204610 <cpl_print>
   20c9ac:	a001                	j	20c9ac <handle_nvme_io_cmd+0x160>
   20c9ae:	0001                	nop
@@ -18040,7 +18040,7 @@ Disassembly of section .text:
   20d276:	2781                	sext.w	a5,a5
   20d278:	cb81                	beqz	a5,20d288 <set_direct_tx_dma+0x48>
   20d27a:	0020f7b7          	lui	a5,0x20f
-  20d27e:	6c878513          	addi	a0,a5,1736 # 20f6c8 <nvme_main+0xd6c>
+  20d27e:	6e078513          	addi	a0,a5,1760 # 20f6e0 <nvme_main+0xd84>
   20d282:	b8ef70ef          	jal	ra,204610 <cpl_print>
   20d286:	a001                	j	20d286 <set_direct_tx_dma+0x46>
   20d288:	fcc42783          	lw	a5,-52(s0)
@@ -18147,7 +18147,7 @@ Disassembly of section .text:
   20d3b6:	2781                	sext.w	a5,a5
   20d3b8:	cb81                	beqz	a5,20d3c8 <set_direct_rx_dma+0x48>
   20d3ba:	0020f7b7          	lui	a5,0x20f
-  20d3be:	6e878513          	addi	a0,a5,1768 # 20f6e8 <nvme_main+0xd8c>
+  20d3be:	70078513          	addi	a0,a5,1792 # 20f700 <nvme_main+0xda4>
   20d3c2:	a4ef70ef          	jal	ra,204610 <cpl_print>
   20d3c6:	a001                	j	20d3c6 <set_direct_rx_dma+0x46>
   20d3c8:	fcc42783          	lw	a5,-52(s0)
@@ -18250,7 +18250,7 @@ Disassembly of section .text:
   20d4ea:	0ff00793          	li	a5,255
   20d4ee:	00e7f963          	bgeu	a5,a4,20d500 <set_auto_tx_dma+0x40>
   20d4f2:	0020f7b7          	lui	a5,0x20f
-  20d4f6:	70878513          	addi	a0,a5,1800 # 20f708 <nvme_main+0xdac>
+  20d4f6:	72078513          	addi	a0,a5,1824 # 20f720 <nvme_main+0xdc4>
   20d4fa:	916f70ef          	jal	ra,204610 <cpl_print>
   20d4fe:	a001                	j	20d4fe <set_auto_tx_dma+0x3e>
   20d500:	20f00793          	li	a5,527
@@ -18895,14 +18895,14 @@ Disassembly of section .text:
   20dcb0:	0007091b          	sext.w	s2,a4
   20dcb4:	0020f737          	lui	a4,0x20f
   20dcb8:	078a                	slli	a5,a5,0x2
-  20dcba:	72070713          	addi	a4,a4,1824 # 20f720 <nvme_main+0xdc4>
+  20dcba:	73870713          	addi	a4,a4,1848 # 20f738 <nvme_main+0xddc>
   20dcbe:	97ba                	add	a5,a5,a4
   20dcc0:	439c                	lw	a5,0(a5)
   20dcc2:	84aa                	mv	s1,a0
   20dcc4:	842e                	mv	s0,a1
   20dcc6:	8782                	jr	a5
   20dcc8:	00210537          	lui	a0,0x210
-  20dccc:	85050513          	addi	a0,a0,-1968 # 20f850 <nvme_main+0xef4>
+  20dccc:	86850513          	addi	a0,a0,-1944 # 20f868 <nvme_main+0xf0c>
   20dcd0:	941f60ef          	jal	ra,204610 <cpl_print>
   20dcd4:	02c4c783          	lbu	a5,44(s1)
   20dcd8:	00210737          	lui	a4,0x210
@@ -18915,7 +18915,7 @@ Disassembly of section .text:
   20dcf2:	00040223          	sb	zero,4(s0)
   20dcf6:	000402a3          	sb	zero,5(s0)
   20dcfa:	00210537          	lui	a0,0x210
-  20dcfe:	8a050513          	addi	a0,a0,-1888 # 20f8a0 <nvme_main+0xf44>
+  20dcfe:	8b850513          	addi	a0,a0,-1864 # 20f8b8 <nvme_main+0xf5c>
   20dd02:	90ff60ef          	jal	ra,204610 <cpl_print>
   20dd06:	7402                	ld	s0,32(sp)
   20dd08:	70a2                	ld	ra,40(sp)
@@ -18925,10 +18925,10 @@ Disassembly of section .text:
   20dd12:	6145                	addi	sp,sp,48
   20dd14:	92bf606f          	j	20463e <cpl_printint>
   20dd18:	00210537          	lui	a0,0x210
-  20dd1c:	86050513          	addi	a0,a0,-1952 # 20f860 <nvme_main+0xf04>
+  20dd1c:	87850513          	addi	a0,a0,-1928 # 20f878 <nvme_main+0xf1c>
   20dd20:	8f1f60ef          	jal	ra,204610 <cpl_print>
   20dd24:	00210537          	lui	a0,0x210
-  20dd28:	88050513          	addi	a0,a0,-1920 # 20f880 <nvme_main+0xf24>
+  20dd28:	89850513          	addi	a0,a0,-1896 # 20f898 <nvme_main+0xf3c>
   20dd2c:	8e5f60ef          	jal	ra,204610 <cpl_print>
   20dd30:	a001                	j	20dd30 <handle_set_features+0xb0>
   20dd32:	00058023          	sb	zero,0(a1)
@@ -18995,7 +18995,7 @@ Disassembly of section .text:
   20dde4:	04f76363          	bltu	a4,a5,20de2a <handle_get_features+0x5e>
   20dde8:	0020f737          	lui	a4,0x20f
   20ddec:	078a                	slli	a5,a5,0x2
-  20ddee:	75c70713          	addi	a4,a4,1884 # 20f75c <nvme_main+0xe00>
+  20ddee:	77470713          	addi	a4,a4,1908 # 20f774 <nvme_main+0xe18>
   20ddf2:	97ba                	add	a5,a5,a4
   20ddf4:	439c                	lw	a5,0(a5)
   20ddf6:	8782                	jr	a5
@@ -19010,14 +19010,14 @@ Disassembly of section .text:
   20de18:	6442                	ld	s0,16(sp)
   20de1a:	60e2                	ld	ra,24(sp)
   20de1c:	00210537          	lui	a0,0x210
-  20de20:	92850513          	addi	a0,a0,-1752 # 20f928 <nvme_main+0xfcc>
+  20de20:	94050513          	addi	a0,a0,-1728 # 20f940 <nvme_main+0xfe4>
   20de24:	6105                	addi	sp,sp,32
   20de26:	feaf606f          	j	204610 <cpl_print>
   20de2a:	00210537          	lui	a0,0x210
-  20de2e:	8e850513          	addi	a0,a0,-1816 # 20f8e8 <nvme_main+0xf8c>
+  20de2e:	90050513          	addi	a0,a0,-1792 # 20f900 <nvme_main+0xfa4>
   20de32:	fdef60ef          	jal	ra,204610 <cpl_print>
   20de36:	00210537          	lui	a0,0x210
-  20de3a:	90850513          	addi	a0,a0,-1784 # 20f908 <nvme_main+0xfac>
+  20de3a:	92050513          	addi	a0,a0,-1760 # 20f920 <nvme_main+0xfc4>
   20de3e:	fd2f60ef          	jal	ra,204610 <cpl_print>
   20de42:	a001                	j	20de42 <handle_get_features+0x76>
   20de44:	00554603          	lbu	a2,5(a0)
@@ -19034,7 +19034,7 @@ Disassembly of section .text:
   20de64:	4705                	li	a4,1
   20de66:	0ae78d63          	beq	a5,a4,20df20 <handle_get_features+0x154>
   20de6a:	00210537          	lui	a0,0x210
-  20de6e:	8b850513          	addi	a0,a0,-1864 # 20f8b8 <nvme_main+0xf5c>
+  20de6e:	8d050513          	addi	a0,a0,-1840 # 20f8d0 <nvme_main+0xf74>
   20de72:	f9ef60ef          	jal	ra,204610 <cpl_print>
   20de76:	a001                	j	20de76 <handle_get_features+0xaa>
   20de78:	00058123          	sb	zero,2(a1)
@@ -19061,11 +19061,11 @@ Disassembly of section .text:
   20dec0:	6442                	ld	s0,16(sp)
   20dec2:	60e2                	ld	ra,24(sp)
   20dec4:	00210537          	lui	a0,0x210
-  20dec8:	92850513          	addi	a0,a0,-1752 # 20f928 <nvme_main+0xfcc>
+  20dec8:	94050513          	addi	a0,a0,-1728 # 20f940 <nvme_main+0xfe4>
   20decc:	6105                	addi	sp,sp,32
   20dece:	f42f606f          	j	204610 <cpl_print>
   20ded2:	00210537          	lui	a0,0x210
-  20ded6:	8d850513          	addi	a0,a0,-1832 # 20f8d8 <nvme_main+0xf7c>
+  20ded6:	8f050513          	addi	a0,a0,-1808 # 20f8f0 <nvme_main+0xf94>
   20deda:	f36f60ef          	jal	ra,204610 <cpl_print>
   20dede:	002107b7          	lui	a5,0x210
   20dee2:	13078793          	addi	a5,a5,304 # 210130 <g_nvmeTask>
@@ -19082,7 +19082,7 @@ Disassembly of section .text:
   20df0e:	6442                	ld	s0,16(sp)
   20df10:	60e2                	ld	ra,24(sp)
   20df12:	00210537          	lui	a0,0x210
-  20df16:	92850513          	addi	a0,a0,-1752 # 20f928 <nvme_main+0xfcc>
+  20df16:	94050513          	addi	a0,a0,-1728 # 20f940 <nvme_main+0xfe4>
   20df1a:	6105                	addi	sp,sp,32
   20df1c:	ef4f606f          	j	204610 <cpl_print>
   20df20:	4791                	li	a5,4
@@ -19186,11 +19186,11 @@ Disassembly of section .text:
   20e042:	0141                	addi	sp,sp,16
   20e044:	8082                	ret
   20e046:	00210537          	lui	a0,0x210
-  20e04a:	94050513          	addi	a0,a0,-1728 # 20f940 <nvme_main+0xfe4>
+  20e04a:	95850513          	addi	a0,a0,-1704 # 20f958 <nvme_main+0xffc>
   20e04e:	dc2f60ef          	jal	ra,204610 <cpl_print>
   20e052:	a001                	j	20e052 <handle_create_io_sq+0x10e>
   20e054:	00210537          	lui	a0,0x210
-  20e058:	96050513          	addi	a0,a0,-1696 # 20f960 <nvme_main+0x1004>
+  20e058:	97850513          	addi	a0,a0,-1672 # 20f978 <nvme_main+0x101c>
   20e05c:	db4f60ef          	jal	ra,204610 <cpl_print>
   20e060:	a001                	j	20e060 <handle_create_io_sq+0x11c>
 
@@ -19210,7 +19210,7 @@ Disassembly of section .text:
   20e088:	0462                	slli	s0,s0,0x18
   20e08a:	8c49                	or	s0,s0,a0
   20e08c:	00210537          	lui	a0,0x210
-  20e090:	98050513          	addi	a0,a0,-1664 # 20f980 <nvme_main+0x1024>
+  20e090:	99850513          	addi	a0,a0,-1640 # 20f998 <nvme_main+0x103c>
   20e094:	84ae                	mv	s1,a1
   20e096:	2401                	sext.w	s0,s0
   20e098:	d78f60ef          	jal	ra,204610 <cpl_print>
@@ -19341,11 +19341,11 @@ Disassembly of section .text:
   20e220:	6105                	addi	sp,sp,32
   20e222:	8082                	ret
   20e224:	00210537          	lui	a0,0x210
-  20e228:	99850513          	addi	a0,a0,-1640 # 20f998 <nvme_main+0x103c>
+  20e228:	9b050513          	addi	a0,a0,-1616 # 20f9b0 <nvme_main+0x1054>
   20e22c:	be4f60ef          	jal	ra,204610 <cpl_print>
   20e230:	a001                	j	20e230 <handle_create_io_cq+0x138>
   20e232:	00210537          	lui	a0,0x210
-  20e236:	9b850513          	addi	a0,a0,-1608 # 20f9b8 <nvme_main+0x105c>
+  20e236:	9d050513          	addi	a0,a0,-1584 # 20f9d0 <nvme_main+0x1074>
   20e23a:	bd6f60ef          	jal	ra,204610 <cpl_print>
   20e23e:	a001                	j	20e23e <handle_create_io_cq+0x146>
 
@@ -19365,7 +19365,7 @@ Disassembly of section .text:
   20e266:	0462                	slli	s0,s0,0x18
   20e268:	8c49                	or	s0,s0,a0
   20e26a:	00210537          	lui	a0,0x210
-  20e26e:	9d850513          	addi	a0,a0,-1576 # 20f9d8 <nvme_main+0x107c>
+  20e26e:	9f050513          	addi	a0,a0,-1552 # 20f9f0 <nvme_main+0x1094>
   20e272:	84ae                	mv	s1,a1
   20e274:	2401                	sext.w	s0,s0
   20e276:	b9af60ef          	jal	ra,204610 <cpl_print>
@@ -19494,7 +19494,7 @@ Disassembly of section .text:
   20e3dc:	6145                	addi	sp,sp,48
   20e3de:	8082                	ret
   20e3e0:	00210537          	lui	a0,0x210
-  20e3e4:	9f050513          	addi	a0,a0,-1552 # 20f9f0 <nvme_main+0x1094>
+  20e3e4:	a0850513          	addi	a0,a0,-1528 # 20fa08 <nvme_main+0x10ac>
   20e3e8:	a28f60ef          	jal	ra,204610 <cpl_print>
   20e3ec:	01844783          	lbu	a5,24(s0)
   20e3f0:	8b8d                	andi	a5,a5,3
@@ -19503,7 +19503,7 @@ Disassembly of section .text:
   20e3f8:	8b8d                	andi	a5,a5,3
   20e3fa:	f00784e3          	beqz	a5,20e302 <handle_identify+0x2c>
   20e3fe:	00210537          	lui	a0,0x210
-  20e402:	a0850513          	addi	a0,a0,-1528 # 20fa08 <nvme_main+0x10ac>
+  20e402:	a2050513          	addi	a0,a0,-1504 # 20fa20 <nvme_main+0x10c4>
   20e406:	a0af60ef          	jal	ra,204610 <cpl_print>
   20e40a:	a001                	j	20e40a <handle_identify+0x134>
   20e40c:	e789                	bnez	a5,20e416 <handle_identify+0x140>
@@ -19511,7 +19511,7 @@ Disassembly of section .text:
   20e412:	8b8d                	andi	a5,a5,3
   20e414:	c795                	beqz	a5,20e440 <handle_identify+0x16a>
   20e416:	00210537          	lui	a0,0x210
-  20e41a:	a2050513          	addi	a0,a0,-1504 # 20fa20 <nvme_main+0x10c4>
+  20e41a:	a3850513          	addi	a0,a0,-1480 # 20fa38 <nvme_main+0x10dc>
   20e41e:	9f2f60ef          	jal	ra,204610 <cpl_print>
   20e422:	01844783          	lbu	a5,24(s0)
   20e426:	8b8d                	andi	a5,a5,3
@@ -19520,7 +19520,7 @@ Disassembly of section .text:
   20e42e:	8b8d                	andi	a5,a5,3
   20e430:	cb81                	beqz	a5,20e440 <handle_identify+0x16a>
   20e432:	00210537          	lui	a0,0x210
-  20e436:	a3850513          	addi	a0,a0,-1480 # 20fa38 <nvme_main+0x10dc>
+  20e436:	a5050513          	addi	a0,a0,-1456 # 20fa50 <nvme_main+0x10f4>
   20e43a:	9d6f60ef          	jal	ra,204610 <cpl_print>
   20e43e:	a001                	j	20e43e <handle_identify+0x168>
   20e440:	16000537          	lui	a0,0x16000
@@ -19549,7 +19549,7 @@ Disassembly of section .text:
   20e47a:	00f76b63          	bltu	a4,a5,20e490 <handle_nvme_admin_cmd+0x2a>
   20e47e:	0020f737          	lui	a4,0x20f
   20e482:	078a                	slli	a5,a5,0x2
-  20e484:	79070713          	addi	a4,a4,1936 # 20f790 <nvme_main+0xe34>
+  20e484:	7a870713          	addi	a4,a4,1960 # 20f7a8 <nvme_main+0xe4c>
   20e488:	97ba                	add	a5,a5,a4
   20e48a:	439c                	lw	a5,0(a5)
   20e48c:	0521                	addi	a0,a0,8
@@ -19587,12 +19587,12 @@ Disassembly of section .text:
   20e4e8:	a79fe0ef          	jal	ra,20cf60 <set_nvme_slot_release>
   20e4ec:	bfe9                	j	20e4c6 <handle_nvme_admin_cmd+0x60>
   20e4ee:	00210537          	lui	a0,0x210
-  20e4f2:	a5050513          	addi	a0,a0,-1456 # 20fa50 <nvme_main+0x10f4>
+  20e4f2:	a6850513          	addi	a0,a0,-1432 # 20fa68 <nvme_main+0x110c>
   20e4f6:	91af60ef          	jal	ra,204610 <cpl_print>
   20e4fa:	8526                	mv	a0,s1
   20e4fc:	942f60ef          	jal	ra,20463e <cpl_printint>
   20e500:	00210537          	lui	a0,0x210
-  20e504:	a7850513          	addi	a0,a0,-1416 # 20fa78 <nvme_main+0x111c>
+  20e504:	a9050513          	addi	a0,a0,-1392 # 20fa90 <nvme_main+0x1134>
   20e508:	908f60ef          	jal	ra,204610 <cpl_print>
   20e50c:	a001                	j	20e50c <handle_nvme_admin_cmd+0xa6>
   20e50e:	002c                	addi	a1,sp,8
@@ -19719,9 +19719,9 @@ Disassembly of section .text:
   20e644:	0785                	addi	a5,a5,1
   20e646:	fee79de3          	bne	a5,a4,20e640 <identify_controller+0x36>
   20e64a:	002107b7          	lui	a5,0x210
-  20e64e:	a9878813          	addi	a6,a5,-1384 # 20fa98 <nvme_main+0x113c>
+  20e64e:	ab078813          	addi	a6,a5,-1360 # 20fab0 <nvme_main+0x1154>
   20e652:	4591                	li	a1,4
-  20e654:	a9878793          	addi	a5,a5,-1384
+  20e654:	ab078793          	addi	a5,a5,-1360
   20e658:	0825                	addi	a6,a6,9
   20e65a:	05300613          	li	a2,83
   20e65e:	8d9d                	sub	a1,a1,a5
@@ -19738,10 +19738,10 @@ Disassembly of section .text:
   20e682:	0705                	addi	a4,a4,1
   20e684:	fef71de3          	bne	a4,a5,20e67e <identify_controller+0x74>
   20e688:	002105b7          	lui	a1,0x210
-  20e68c:	aa858693          	addi	a3,a1,-1368 # 20faa8 <nvme_main+0x114c>
+  20e68c:	ac058693          	addi	a3,a1,-1344 # 20fac0 <nvme_main+0x1164>
   20e690:	00210737          	lui	a4,0x210
   20e694:	45dd                	li	a1,23
-  20e696:	aa970713          	addi	a4,a4,-1367 # 20faa9 <nvme_main+0x114d>
+  20e696:	ac170713          	addi	a4,a4,-1343 # 20fac1 <nvme_main+0x1165>
   20e69a:	01068813          	addi	a6,a3,16
   20e69e:	04300613          	li	a2,67
   20e6a2:	8d95                	sub	a1,a1,a3
@@ -19758,9 +19758,9 @@ Disassembly of section .text:
   20e6c6:	0785                	addi	a5,a5,1
   20e6c8:	fef69de3          	bne	a3,a5,20e6c2 <identify_controller+0xb8>
   20e6cc:	002107b7          	lui	a5,0x210
-  20e6d0:	ab878593          	addi	a1,a5,-1352 # 20fab8 <nvme_main+0x115c>
+  20e6d0:	ad078593          	addi	a1,a5,-1328 # 20fad0 <nvme_main+0x1174>
   20e6d4:	04000613          	li	a2,64
-  20e6d8:	ab878793          	addi	a5,a5,-1352
+  20e6d8:	ad078793          	addi	a5,a5,-1328
   20e6dc:	05a5                	addi	a1,a1,9
   20e6de:	05400693          	li	a3,84
   20e6e2:	8e1d                	sub	a2,a2,a5
@@ -19946,21 +19946,21 @@ Disassembly of section .text:
 
 000000000020e95c <nvme_main>:
   20e95c:	00210537          	lui	a0,0x210
-  20e960:	7115                	addi	sp,sp,-224
-  20e962:	ac850513          	addi	a0,a0,-1336 # 20fac8 <nvme_main+0x116c>
-  20e966:	ed86                	sd	ra,216(sp)
-  20e968:	e9a2                	sd	s0,208(sp)
-  20e96a:	e5a6                	sd	s1,200(sp)
-  20e96c:	e1ca                	sd	s2,192(sp)
-  20e96e:	fd4e                	sd	s3,184(sp)
-  20e970:	f952                	sd	s4,176(sp)
-  20e972:	f556                	sd	s5,168(sp)
-  20e974:	f15a                	sd	s6,160(sp)
-  20e976:	ed5e                	sd	s7,152(sp)
-  20e978:	e962                	sd	s8,144(sp)
-  20e97a:	e566                	sd	s9,136(sp)
-  20e97c:	e16a                	sd	s10,128(sp)
-  20e97e:	fcee                	sd	s11,120(sp)
+  20e960:	7155                	addi	sp,sp,-208
+  20e962:	ae050513          	addi	a0,a0,-1312 # 20fae0 <nvme_main+0x1184>
+  20e966:	e586                	sd	ra,200(sp)
+  20e968:	e1a2                	sd	s0,192(sp)
+  20e96a:	fd26                	sd	s1,184(sp)
+  20e96c:	f94a                	sd	s2,176(sp)
+  20e96e:	f54e                	sd	s3,168(sp)
+  20e970:	f152                	sd	s4,160(sp)
+  20e972:	ed56                	sd	s5,152(sp)
+  20e974:	e95a                	sd	s6,144(sp)
+  20e976:	e55e                	sd	s7,136(sp)
+  20e978:	e162                	sd	s8,128(sp)
+  20e97a:	fce6                	sd	s9,120(sp)
+  20e97c:	f8ea                	sd	s10,112(sp)
+  20e97e:	f4ee                	sd	s11,104(sp)
   20e980:	18000437          	lui	s0,0x18000
   20e984:	c8df50ef          	jal	ra,204610 <cpl_print>
   20e988:	ff040513          	addi	a0,s0,-16 # 17fffff0 <g_nvmeTask+0x17defec0>
@@ -19968,348 +19968,355 @@ Disassembly of section .text:
   20e990:	67d5                	lui	a5,0x15
   20e992:	0005071b          	sext.w	a4,a0
   20e996:	dd978793          	addi	a5,a5,-551 # 14dd9 <start-0x1eb227>
-  20e99a:	36f70863          	beq	a4,a5,20ed0a <nvme_main+0x3ae>
-  20e99e:	b5efb0ef          	jal	ra,209cfc <InitFTL>
-  20e9a2:	00210537          	lui	a0,0x210
-  20e9a6:	af850513          	addi	a0,a0,-1288 # 20faf8 <nvme_main+0x119c>
-  20e9aa:	c67f50ef          	jal	ra,204610 <cpl_print>
-  20e9ae:	17fe07b7          	lui	a5,0x17fe0
-  20e9b2:	00210437          	lui	s0,0x210
-  20e9b6:	6a41                	lui	s4,0x10
-  20e9b8:	20f00c93          	li	s9,527
-  20e9bc:	f0078793          	addi	a5,a5,-256 # 17fdff00 <g_nvmeTask+0x17dcfdd0>
-  20e9c0:	43c80937          	lui	s2,0x43c80
-  20e9c4:	4d01                	li	s10,0
-  20e9c6:	13040413          	addi	s0,s0,304 # 210130 <g_nvmeTask>
-  20e9ca:	00210ab7          	lui	s5,0x210
-  20e9ce:	00210c37          	lui	s8,0x210
-  20e9d2:	00210bb7          	lui	s7,0x210
-  20e9d6:	002109b7          	lui	s3,0x210
-  20e9da:	4485                	li	s1,1
-  20e9dc:	1a7d                	addi	s4,s4,-1
-  20e9de:	0cda                	slli	s9,s9,0x16
-  20e9e0:	ec3e                	sd	a5,24(sp)
-  20e9e2:	0951                	addi	s2,s2,20
-  20e9e4:	a829                	j	20e9fe <nvme_main+0xa2>
-  20e9e6:	cf0fd0ef          	jal	ra,20bed6 <CheckDoneNvmeDmaReq>
-  20e9ea:	d05f60ef          	jal	ra,2056ee <SchedulingNandReq>
-  20e9ee:	bc098513          	addi	a0,s3,-1088 # 20fbc0 <nvme_main+0x1264>
-  20e9f2:	c1ff50ef          	jal	ra,204610 <cpl_print>
-  20e9f6:	4585                	li	a1,1
-  20e9f8:	854a                	mv	a0,s2
-  20e9fa:	db3f50ef          	jal	ra,2047ac <cpl_Out32>
-  20e9fe:	401c                	lw	a5,0(s0)
-  20ea00:	2781                	sext.w	a5,a5
-  20ea02:	0a978663          	beq	a5,s1,20eaae <nvme_main+0x152>
-  20ea06:	401c                	lw	a5,0(s0)
-  20ea08:	4709                	li	a4,2
-  20ea0a:	2781                	sext.w	a5,a5
-  20ea0c:	0ee78063          	beq	a5,a4,20eaec <nvme_main+0x190>
-  20ea10:	401c                	lw	a5,0(s0)
-  20ea12:	470d                	li	a4,3
-  20ea14:	2781                	sext.w	a5,a5
-  20ea16:	02e78863          	beq	a5,a4,20ea46 <nvme_main+0xea>
-  20ea1a:	401c                	lw	a5,0(s0)
-  20ea1c:	4711                	li	a4,4
-  20ea1e:	2781                	sext.w	a5,a5
-  20ea20:	1ce78d63          	beq	a5,a4,20ebfa <nvme_main+0x29e>
-  20ea24:	401c                	lw	a5,0(s0)
-  20ea26:	4715                	li	a4,5
-  20ea28:	2781                	sext.w	a5,a5
-  20ea2a:	1ee78d63          	beq	a5,a4,20ec24 <nvme_main+0x2c8>
-  20ea2e:	e48ad783          	lhu	a5,-440(s5) # 20fe48 <nvmeDmaReqQ>
-  20ea32:	fb479ae3          	bne	a5,s4,20e9e6 <nvme_main+0x8a>
-  20ea36:	c20c2783          	lw	a5,-992(s8) # 20fc20 <notCompletedNandReqCnt>
-  20ea3a:	050ba703          	lw	a4,80(s7) # 210050 <blockedReqCnt>
-  20ea3e:	8fd9                	or	a5,a5,a4
-  20ea40:	2781                	sext.w	a5,a5
-  20ea42:	d7d5                	beqz	a5,20e9ee <nvme_main+0x92>
-  20ea44:	b74d                	j	20e9e6 <nvme_main+0x8a>
-  20ea46:	200ca783          	lw	a5,512(s9)
-  20ea4a:	8b99                	andi	a5,a5,6
-  20ea4c:	d3ed                	beqz	a5,20ea2e <nvme_main+0xd2>
-  20ea4e:	4505                	li	a0,1
-  20ea50:	a98fe0ef          	jal	ra,20cce8 <set_nvme_csts_shst>
-  20ea54:	4d81                	li	s11,0
-  20ea56:	4b21                	li	s6,8
-  20ea58:	856e                	mv	a0,s11
-  20ea5a:	4781                	li	a5,0
-  20ea5c:	4701                	li	a4,0
-  20ea5e:	4681                	li	a3,0
-  20ea60:	4601                	li	a2,0
-  20ea62:	4581                	li	a1,0
-  20ea64:	4801                	li	a6,0
-  20ea66:	ed6fe0ef          	jal	ra,20d13c <set_io_cq>
-  20ea6a:	856e                	mv	a0,s11
-  20ea6c:	4781                	li	a5,0
-  20ea6e:	2d85                	addiw	s11,s11,1
-  20ea70:	4701                	li	a4,0
-  20ea72:	4681                	li	a3,0
-  20ea74:	4601                	li	a2,0
-  20ea76:	4581                	li	a1,0
-  20ea78:	decfe0ef          	jal	ra,20d064 <set_io_sq>
-  20ea7c:	fd6d9ee3          	bne	s11,s6,20ea58 <nvme_main+0xfc>
-  20ea80:	4601                	li	a2,0
-  20ea82:	4581                	li	a1,0
-  20ea84:	4501                	li	a0,0
-  20ea86:	ab6fe0ef          	jal	ra,20cd3c <set_nvme_admin_queue>
-  20ea8a:	4509                	li	a0,2
-  20ea8c:	00042223          	sw	zero,4(s0)
-  20ea90:	a58fe0ef          	jal	ra,20cce8 <set_nvme_csts_shst>
-  20ea94:	4791                	li	a5,4
-  20ea96:	11144537          	lui	a0,0x11144
-  20ea9a:	c01c                	sw	a5,0(s0)
-  20ea9c:	b98f40ef          	jal	ra,202e34 <UpdateBadBlockTableForGrownBadBlock>
-  20eaa0:	002107b7          	lui	a5,0x210
-  20eaa4:	b2878513          	addi	a0,a5,-1240 # 20fb28 <nvme_main+0x11cc>
-  20eaa8:	b69f50ef          	jal	ra,204610 <cpl_print>
-  20eaac:	b749                	j	20ea2e <nvme_main+0xd2>
-  20eaae:	91afe0ef          	jal	ra,20cbc8 <check_nvme_cc_en>
-  20eab2:	2501                	sext.w	a0,a0
-  20eab4:	f6951de3          	bne	a0,s1,20ea2e <nvme_main+0xd2>
-  20eab8:	4605                	li	a2,1
-  20eaba:	4585                	li	a1,1
-  20eabc:	4505                	li	a0,1
-  20eabe:	a7efe0ef          	jal	ra,20cd3c <set_nvme_admin_queue>
-  20eac2:	4505                	li	a0,1
-  20eac4:	9d0fe0ef          	jal	ra,20cc94 <set_nvme_csts_rdy>
-  20eac8:	18000b37          	lui	s6,0x18000
-  20eacc:	4789                	li	a5,2
-  20eace:	ff0b0513          	addi	a0,s6,-16 # 17fffff0 <g_nvmeTask+0x17defec0>
-  20ead2:	c01c                	sw	a5,0(s0)
-  20ead4:	cddf50ef          	jal	ra,2047b0 <cpl_In32>
-  20ead8:	2501                	sext.w	a0,a0
-  20eada:	1c050663          	beqz	a0,20eca6 <nvme_main+0x34a>
-  20eade:	002107b7          	lui	a5,0x210
-  20eae2:	b1078513          	addi	a0,a5,-1264 # 20fb10 <nvme_main+0x11b4>
-  20eae6:	b2bf50ef          	jal	ra,204610 <cpl_print>
-  20eaea:	b791                	j	20ea2e <nvme_main+0xd2>
-  20eaec:	1814                	addi	a3,sp,48
-  20eaee:	1070                	addi	a2,sp,44
-  20eaf0:	02a10593          	addi	a1,sp,42
-  20eaf4:	1028                	addi	a0,sp,40
-  20eaf6:	ae2fe0ef          	jal	ra,20cdd8 <get_nvme_cmd>
-  20eafa:	8b2a                	mv	s6,a0
-  20eafc:	18000537          	lui	a0,0x18000
-  20eb00:	1551                	addi	a0,a0,-12
-  20eb02:	caff50ef          	jal	ra,2047b0 <cpl_In32>
-  20eb06:	2b01                	sext.w	s6,s6
-  20eb08:	00050d9b          	sext.w	s11,a0
-  20eb0c:	f29b11e3          	bne	s6,s1,20ea2e <nvme_main+0xd2>
-  20eb10:	02815703          	lhu	a4,40(sp)
-  20eb14:	00970863          	beq	a4,s1,20eb24 <nvme_main+0x1c8>
-  20eb18:	ef09                	bnez	a4,20eb32 <nvme_main+0x1d6>
-  20eb1a:	1028                	addi	a0,sp,40
-  20eb1c:	94bff0ef          	jal	ra,20e466 <handle_nvme_admin_cmd>
-  20eb20:	4d01                	li	s10,0
-  20eb22:	b731                	j	20ea2e <nvme_main+0xd2>
-  20eb24:	03014703          	lbu	a4,48(sp)
-  20eb28:	377d                	addiw	a4,a4,-1
-  20eb2a:	0ff77713          	andi	a4,a4,255
-  20eb2e:	18e4f463          	bgeu	s1,a4,20ecb6 <nvme_main+0x35a>
-  20eb32:	1028                	addi	a0,sp,40
-  20eb34:	d19fd0ef          	jal	ra,20c84c <handle_nvme_io_cmd>
-  20eb38:	1028                	addi	a0,sp,40
-  20eb3a:	fc5fb0ef          	jal	ra,20aafe <ReqTransSliceToLowLevel>
-  20eb3e:	18000b37          	lui	s6,0x18000
-  20eb42:	ff4b0513          	addi	a0,s6,-12 # 17fffff4 <g_nvmeTask+0x17defec4>
-  20eb46:	c6bf50ef          	jal	ra,2047b0 <cpl_In32>
-  20eb4a:	00050d1b          	sext.w	s10,a0
-  20eb4e:	000d0963          	beqz	s10,20eb60 <nvme_main+0x204>
-  20eb52:	03014783          	lbu	a5,48(sp)
-  20eb56:	37fd                	addiw	a5,a5,-1
-  20eb58:	0ff7f793          	andi	a5,a5,255
-  20eb5c:	00f4f463          	bgeu	s1,a5,20eb64 <nvme_main+0x208>
-  20eb60:	4d01                	li	s10,0
-  20eb62:	b571                	j	20e9ee <nvme_main+0x92>
-  20eb64:	6de2                	ld	s11,24(sp)
-  20eb66:	ff4b0793          	addi	a5,s6,-12
-  20eb6a:	e83e                	sd	a5,16(sp)
-  20eb6c:	008d879b          	addiw	a5,s11,8
-  20eb70:	02079b13          	slli	s6,a5,0x20
-  20eb74:	020b5b13          	srli	s6,s6,0x20
-  20eb78:	855a                	mv	a0,s6
-  20eb7a:	c37f50ef          	jal	ra,2047b0 <cpl_In32>
-  20eb7e:	2501                	sext.w	a0,a0
-  20eb80:	00950f63          	beq	a0,s1,20eb9e <nvme_main+0x242>
-  20eb84:	2db1                	addiw	s11,s11,12
-  20eb86:	008d879b          	addiw	a5,s11,8
-  20eb8a:	02079b13          	slli	s6,a5,0x20
-  20eb8e:	020b5b13          	srli	s6,s6,0x20
-  20eb92:	855a                	mv	a0,s6
-  20eb94:	c1df50ef          	jal	ra,2047b0 <cpl_In32>
-  20eb98:	2501                	sext.w	a0,a0
-  20eb9a:	fe9515e3          	bne	a0,s1,20eb84 <nvme_main+0x228>
-  20eb9e:	020d9813          	slli	a6,s11,0x20
-  20eba2:	02085813          	srli	a6,a6,0x20
-  20eba6:	8542                	mv	a0,a6
-  20eba8:	e442                	sd	a6,8(sp)
-  20ebaa:	c07f50ef          	jal	ra,2047b0 <cpl_In32>
-  20ebae:	4601                	li	a2,0
-  20ebb0:	2501                	sext.w	a0,a0
-  20ebb2:	4581                	li	a1,0
-  20ebb4:	b1cfe0ef          	jal	ra,20ced0 <set_auto_nvme_cpl>
-  20ebb8:	002107b7          	lui	a5,0x210
-  20ebbc:	1287a683          	lw	a3,296(a5) # 210128 <table_logic_minus_count>
-  20ebc0:	6542                	ld	a0,16(sp)
-  20ebc2:	3d7d                	addiw	s10,s10,-1
-  20ebc4:	2685                	addiw	a3,a3,1
-  20ebc6:	85ea                	mv	a1,s10
-  20ebc8:	12d7a423          	sw	a3,296(a5)
-  20ebcc:	be1f50ef          	jal	ra,2047ac <cpl_Out32>
-  20ebd0:	6822                	ld	a6,8(sp)
-  20ebd2:	4581                	li	a1,0
-  20ebd4:	8542                	mv	a0,a6
-  20ebd6:	bd7f50ef          	jal	ra,2047ac <cpl_Out32>
-  20ebda:	004d851b          	addiw	a0,s11,4
-  20ebde:	1502                	slli	a0,a0,0x20
-  20ebe0:	9101                	srli	a0,a0,0x20
-  20ebe2:	4581                	li	a1,0
-  20ebe4:	bc9f50ef          	jal	ra,2047ac <cpl_Out32>
-  20ebe8:	4581                	li	a1,0
-  20ebea:	855a                	mv	a0,s6
-  20ebec:	bc1f50ef          	jal	ra,2047ac <cpl_Out32>
-  20ebf0:	2db1                	addiw	s11,s11,12
-  20ebf2:	f60d1de3          	bnez	s10,20eb6c <nvme_main+0x210>
-  20ebf6:	4d01                	li	s10,0
-  20ebf8:	bbdd                	j	20e9ee <nvme_main+0x92>
-  20ebfa:	fcffd0ef          	jal	ra,20cbc8 <check_nvme_cc_en>
-  20ebfe:	2501                	sext.w	a0,a0
-  20ec00:	e20517e3          	bnez	a0,20ea2e <nvme_main+0xd2>
-  20ec04:	00042223          	sw	zero,4(s0)
-  20ec08:	8e0fe0ef          	jal	ra,20cce8 <set_nvme_csts_shst>
-  20ec0c:	4501                	li	a0,0
-  20ec0e:	886fe0ef          	jal	ra,20cc94 <set_nvme_csts_rdy>
-  20ec12:	002107b7          	lui	a5,0x210
-  20ec16:	b4078513          	addi	a0,a5,-1216 # 20fb40 <nvme_main+0x11e4>
-  20ec1a:	00042023          	sw	zero,0(s0)
-  20ec1e:	9f3f50ef          	jal	ra,204610 <cpl_print>
-  20ec22:	b531                	j	20ea2e <nvme_main+0xd2>
-  20ec24:	4d81                	li	s11,0
-  20ec26:	4b21                	li	s6,8
-  20ec28:	856e                	mv	a0,s11
-  20ec2a:	4781                	li	a5,0
-  20ec2c:	4701                	li	a4,0
-  20ec2e:	4681                	li	a3,0
-  20ec30:	4601                	li	a2,0
-  20ec32:	4581                	li	a1,0
-  20ec34:	4801                	li	a6,0
-  20ec36:	d06fe0ef          	jal	ra,20d13c <set_io_cq>
-  20ec3a:	856e                	mv	a0,s11
-  20ec3c:	4781                	li	a5,0
-  20ec3e:	2d85                	addiw	s11,s11,1
-  20ec40:	4701                	li	a4,0
-  20ec42:	4681                	li	a3,0
-  20ec44:	4601                	li	a2,0
-  20ec46:	4581                	li	a1,0
-  20ec48:	c1cfe0ef          	jal	ra,20d064 <set_io_sq>
-  20ec4c:	fd6d9ee3          	bne	s11,s6,20ec28 <nvme_main+0x2cc>
-  20ec50:	4791                	li	a5,4
-  20ec52:	03a7e963          	bltu	a5,s10,20ec84 <nvme_main+0x328>
-  20ec56:	2d05                	addiw	s10,s10,1
-  20ec58:	4601                	li	a2,0
-  20ec5a:	4581                	li	a1,0
-  20ec5c:	4501                	li	a0,0
-  20ec5e:	00042223          	sw	zero,4(s0)
-  20ec62:	8dafe0ef          	jal	ra,20cd3c <set_nvme_admin_queue>
-  20ec66:	4501                	li	a0,0
-  20ec68:	880fe0ef          	jal	ra,20cce8 <set_nvme_csts_shst>
-  20ec6c:	4501                	li	a0,0
-  20ec6e:	826fe0ef          	jal	ra,20cc94 <set_nvme_csts_rdy>
-  20ec72:	002107b7          	lui	a5,0x210
-  20ec76:	ba878513          	addi	a0,a5,-1112 # 20fba8 <nvme_main+0x124c>
-  20ec7a:	00042023          	sw	zero,0(s0)
-  20ec7e:	993f50ef          	jal	ra,204610 <cpl_print>
-  20ec82:	b375                	j	20ea2e <nvme_main+0xd2>
-  20ec84:	856a                	mv	a0,s10
-  20ec86:	f6ffd0ef          	jal	ra,20cbf4 <pcie_async_reset>
-  20ec8a:	002107b7          	lui	a5,0x210
-  20ec8e:	b5878513          	addi	a0,a5,-1192 # 20fb58 <nvme_main+0x11fc>
-  20ec92:	97ff50ef          	jal	ra,204610 <cpl_print>
-  20ec96:	002107b7          	lui	a5,0x210
-  20ec9a:	b7878513          	addi	a0,a5,-1160 # 20fb78 <nvme_main+0x121c>
-  20ec9e:	973f50ef          	jal	ra,204610 <cpl_print>
-  20eca2:	4d01                	li	s10,0
-  20eca4:	bf55                	j	20ec58 <nvme_main+0x2fc>
-  20eca6:	65d5                	lui	a1,0x15
-  20eca8:	dd958593          	addi	a1,a1,-551 # 14dd9 <start-0x1eb227>
-  20ecac:	ff0b0513          	addi	a0,s6,-16
-  20ecb0:	afdf50ef          	jal	ra,2047ac <cpl_Out32>
-  20ecb4:	b52d                	j	20eade <nvme_main+0x182>
-  20ecb6:	6d62                	ld	s10,24(sp)
-  20ecb8:	a011                	j	20ecbc <nvme_main+0x360>
-  20ecba:	2d31                	addiw	s10,s10,12
-  20ecbc:	008d0b1b          	addiw	s6,s10,8
-  20ecc0:	1b02                	slli	s6,s6,0x20
-  20ecc2:	020b5b13          	srli	s6,s6,0x20
-  20ecc6:	855a                	mv	a0,s6
-  20ecc8:	ae9f50ef          	jal	ra,2047b0 <cpl_In32>
-  20eccc:	2501                	sext.w	a0,a0
-  20ecce:	f575                	bnez	a0,20ecba <nvme_main+0x35e>
-  20ecd0:	02a15583          	lhu	a1,42(sp)
-  20ecd4:	020d1513          	slli	a0,s10,0x20
-  20ecd8:	9101                	srli	a0,a0,0x20
-  20ecda:	ad3f50ef          	jal	ra,2047ac <cpl_Out32>
-  20ecde:	03215583          	lhu	a1,50(sp)
-  20ece2:	004d051b          	addiw	a0,s10,4
-  20ece6:	1502                	slli	a0,a0,0x20
-  20ece8:	9101                	srli	a0,a0,0x20
-  20ecea:	ac3f50ef          	jal	ra,2047ac <cpl_Out32>
-  20ecee:	4585                	li	a1,1
-  20ecf0:	855a                	mv	a0,s6
-  20ecf2:	abbf50ef          	jal	ra,2047ac <cpl_Out32>
-  20ecf6:	18000537          	lui	a0,0x18000
-  20ecfa:	001d859b          	addiw	a1,s11,1
-  20ecfe:	1551                	addi	a0,a0,-12
-  20ed00:	aadf50ef          	jal	ra,2047ac <cpl_Out32>
-  20ed04:	02815703          	lhu	a4,40(sp)
-  20ed08:	bd01                	j	20eb18 <nvme_main+0x1bc>
-  20ed0a:	ff440513          	addi	a0,s0,-12
-  20ed0e:	aa3f50ef          	jal	ra,2047b0 <cpl_In32>
-  20ed12:	17fe0437          	lui	s0,0x17fe0
-  20ed16:	0005049b          	sext.w	s1,a0
-  20ed1a:	f0040413          	addi	s0,s0,-256 # 17fdff00 <g_nvmeTask+0x17dcfdd0>
-  20ed1e:	4a05                	li	s4,1
-  20ed20:	c8a5                	beqz	s1,20ed90 <nvme_main+0x434>
-  20ed22:	0084091b          	addiw	s2,s0,8
-  20ed26:	1902                	slli	s2,s2,0x20
-  20ed28:	02095913          	srli	s2,s2,0x20
-  20ed2c:	854a                	mv	a0,s2
-  20ed2e:	a83f50ef          	jal	ra,2047b0 <cpl_In32>
-  20ed32:	0005079b          	sext.w	a5,a0
-  20ed36:	01478f63          	beq	a5,s4,20ed54 <nvme_main+0x3f8>
-  20ed3a:	2431                	addiw	s0,s0,12
-  20ed3c:	0084091b          	addiw	s2,s0,8
-  20ed40:	1902                	slli	s2,s2,0x20
-  20ed42:	02095913          	srli	s2,s2,0x20
-  20ed46:	854a                	mv	a0,s2
-  20ed48:	a69f50ef          	jal	ra,2047b0 <cpl_In32>
-  20ed4c:	0005079b          	sext.w	a5,a0
-  20ed50:	ff4795e3          	bne	a5,s4,20ed3a <nvme_main+0x3de>
-  20ed54:	02041993          	slli	s3,s0,0x20
-  20ed58:	0209d993          	srli	s3,s3,0x20
-  20ed5c:	854e                	mv	a0,s3
-  20ed5e:	a53f50ef          	jal	ra,2047b0 <cpl_In32>
-  20ed62:	4601                	li	a2,0
-  20ed64:	2501                	sext.w	a0,a0
-  20ed66:	4581                	li	a1,0
-  20ed68:	968fe0ef          	jal	ra,20ced0 <set_auto_nvme_cpl>
-  20ed6c:	854e                	mv	a0,s3
-  20ed6e:	4581                	li	a1,0
-  20ed70:	a3df50ef          	jal	ra,2047ac <cpl_Out32>
-  20ed74:	0044051b          	addiw	a0,s0,4
-  20ed78:	1502                	slli	a0,a0,0x20
-  20ed7a:	9101                	srli	a0,a0,0x20
-  20ed7c:	4581                	li	a1,0
-  20ed7e:	a2ff50ef          	jal	ra,2047ac <cpl_Out32>
+  20e99a:	38f70263          	beq	a4,a5,20ed1e <nvme_main+0x3c2>
+  20e99e:	18000537          	lui	a0,0x18000
+  20e9a2:	1541                	addi	a0,a0,-16
+  20e9a4:	e0df50ef          	jal	ra,2047b0 <cpl_In32>
+  20e9a8:	67d5                	lui	a5,0x15
+  20e9aa:	0005071b          	sext.w	a4,a0
+  20e9ae:	dd978793          	addi	a5,a5,-551 # 14dd9 <start-0x1eb227>
+  20e9b2:	00f70463          	beq	a4,a5,20e9ba <nvme_main+0x5e>
+  20e9b6:	b46fb0ef          	jal	ra,209cfc <InitFTL>
+  20e9ba:	00210537          	lui	a0,0x210
+  20e9be:	b1050513          	addi	a0,a0,-1264 # 20fb10 <nvme_main+0x11b4>
+  20e9c2:	c4ff50ef          	jal	ra,204610 <cpl_print>
+  20e9c6:	17fe07b7          	lui	a5,0x17fe0
+  20e9ca:	f0078793          	addi	a5,a5,-256 # 17fdff00 <g_nvmeTask+0x17dcfdd0>
+  20e9ce:	00210437          	lui	s0,0x210
+  20e9d2:	6941                	lui	s2,0x10
+  20e9d4:	20f00b93          	li	s7,527
+  20e9d8:	e43e                	sd	a5,8(sp)
+  20e9da:	43c807b7          	lui	a5,0x43c80
+  20e9de:	4c01                	li	s8,0
+  20e9e0:	13040413          	addi	s0,s0,304 # 210130 <g_nvmeTask>
+  20e9e4:	00210cb7          	lui	s9,0x210
+  20e9e8:	002109b7          	lui	s3,0x210
+  20e9ec:	00210b37          	lui	s6,0x210
+  20e9f0:	00210ab7          	lui	s5,0x210
+  20e9f4:	197d                	addi	s2,s2,-1
+  20e9f6:	0bda                	slli	s7,s7,0x16
+  20e9f8:	01478493          	addi	s1,a5,20 # 43c80014 <g_nvmeTask+0x43a6fee4>
+  20e9fc:	a829                	j	20ea16 <nvme_main+0xba>
+  20e9fe:	cd8fd0ef          	jal	ra,20bed6 <CheckDoneNvmeDmaReq>
+  20ea02:	cedf60ef          	jal	ra,2056ee <SchedulingNandReq>
+  20ea06:	8526                	mv	a0,s1
+  20ea08:	4585                	li	a1,1
+  20ea0a:	da3f50ef          	jal	ra,2047ac <cpl_Out32>
+  20ea0e:	4581                	li	a1,0
+  20ea10:	8526                	mv	a0,s1
+  20ea12:	d9bf50ef          	jal	ra,2047ac <cpl_Out32>
+  20ea16:	00042a03          	lw	s4,0(s0)
+  20ea1a:	4d05                	li	s10,1
+  20ea1c:	2a01                	sext.w	s4,s4
+  20ea1e:	0baa0663          	beq	s4,s10,20eaca <nvme_main+0x16e>
+  20ea22:	401c                	lw	a5,0(s0)
+  20ea24:	4689                	li	a3,2
+  20ea26:	2781                	sext.w	a5,a5
+  20ea28:	0ed78063          	beq	a5,a3,20eb08 <nvme_main+0x1ac>
+  20ea2c:	401c                	lw	a5,0(s0)
+  20ea2e:	470d                	li	a4,3
+  20ea30:	2781                	sext.w	a5,a5
+  20ea32:	02e78863          	beq	a5,a4,20ea62 <nvme_main+0x106>
+  20ea36:	401c                	lw	a5,0(s0)
+  20ea38:	4711                	li	a4,4
+  20ea3a:	2781                	sext.w	a5,a5
+  20ea3c:	16e78663          	beq	a5,a4,20eba8 <nvme_main+0x24c>
+  20ea40:	401c                	lw	a5,0(s0)
+  20ea42:	4715                	li	a4,5
+  20ea44:	2781                	sext.w	a5,a5
+  20ea46:	18e78663          	beq	a5,a4,20ebd2 <nvme_main+0x276>
+  20ea4a:	e489d783          	lhu	a5,-440(s3) # 20fe48 <nvmeDmaReqQ>
+  20ea4e:	fb2798e3          	bne	a5,s2,20e9fe <nvme_main+0xa2>
+  20ea52:	c20b2783          	lw	a5,-992(s6) # 20fc20 <notCompletedNandReqCnt>
+  20ea56:	050aa703          	lw	a4,80(s5) # 210050 <blockedReqCnt>
+  20ea5a:	8fd9                	or	a5,a5,a4
+  20ea5c:	2781                	sext.w	a5,a5
+  20ea5e:	d7c5                	beqz	a5,20ea06 <nvme_main+0xaa>
+  20ea60:	bf79                	j	20e9fe <nvme_main+0xa2>
+  20ea62:	200ba783          	lw	a5,512(s7)
+  20ea66:	8b99                	andi	a5,a5,6
+  20ea68:	d3ed                	beqz	a5,20ea4a <nvme_main+0xee>
+  20ea6a:	4505                	li	a0,1
+  20ea6c:	a7cfe0ef          	jal	ra,20cce8 <set_nvme_csts_shst>
+  20ea70:	4d81                	li	s11,0
+  20ea72:	4a21                	li	s4,8
+  20ea74:	856e                	mv	a0,s11
+  20ea76:	4781                	li	a5,0
+  20ea78:	4701                	li	a4,0
+  20ea7a:	4681                	li	a3,0
+  20ea7c:	4601                	li	a2,0
+  20ea7e:	4581                	li	a1,0
+  20ea80:	4801                	li	a6,0
+  20ea82:	ebafe0ef          	jal	ra,20d13c <set_io_cq>
+  20ea86:	856e                	mv	a0,s11
+  20ea88:	4781                	li	a5,0
+  20ea8a:	2d85                	addiw	s11,s11,1
+  20ea8c:	4701                	li	a4,0
+  20ea8e:	4681                	li	a3,0
+  20ea90:	4601                	li	a2,0
+  20ea92:	4581                	li	a1,0
+  20ea94:	dd0fe0ef          	jal	ra,20d064 <set_io_sq>
+  20ea98:	fd4d9ee3          	bne	s11,s4,20ea74 <nvme_main+0x118>
+  20ea9c:	4601                	li	a2,0
+  20ea9e:	4581                	li	a1,0
+  20eaa0:	4501                	li	a0,0
+  20eaa2:	a9afe0ef          	jal	ra,20cd3c <set_nvme_admin_queue>
+  20eaa6:	4509                	li	a0,2
+  20eaa8:	00042223          	sw	zero,4(s0)
+  20eaac:	a3cfe0ef          	jal	ra,20cce8 <set_nvme_csts_shst>
+  20eab0:	4791                	li	a5,4
+  20eab2:	11144537          	lui	a0,0x11144
+  20eab6:	c01c                	sw	a5,0(s0)
+  20eab8:	b7cf40ef          	jal	ra,202e34 <UpdateBadBlockTableForGrownBadBlock>
+  20eabc:	002107b7          	lui	a5,0x210
+  20eac0:	b4078513          	addi	a0,a5,-1216 # 20fb40 <nvme_main+0x11e4>
+  20eac4:	b4df50ef          	jal	ra,204610 <cpl_print>
+  20eac8:	b749                	j	20ea4a <nvme_main+0xee>
+  20eaca:	8fefe0ef          	jal	ra,20cbc8 <check_nvme_cc_en>
+  20eace:	2501                	sext.w	a0,a0
+  20ead0:	f7451de3          	bne	a0,s4,20ea4a <nvme_main+0xee>
+  20ead4:	4605                	li	a2,1
+  20ead6:	4585                	li	a1,1
+  20ead8:	4505                	li	a0,1
+  20eada:	a62fe0ef          	jal	ra,20cd3c <set_nvme_admin_queue>
+  20eade:	4505                	li	a0,1
+  20eae0:	9b4fe0ef          	jal	ra,20cc94 <set_nvme_csts_rdy>
+  20eae4:	18000a37          	lui	s4,0x18000
+  20eae8:	4789                	li	a5,2
+  20eaea:	ff0a0513          	addi	a0,s4,-16 # 17fffff0 <g_nvmeTask+0x17defec0>
+  20eaee:	c01c                	sw	a5,0(s0)
+  20eaf0:	cc1f50ef          	jal	ra,2047b0 <cpl_In32>
+  20eaf4:	2501                	sext.w	a0,a0
+  20eaf6:	14050d63          	beqz	a0,20ec50 <nvme_main+0x2f4>
+  20eafa:	002107b7          	lui	a5,0x210
+  20eafe:	b2878513          	addi	a0,a5,-1240 # 20fb28 <nvme_main+0x11cc>
+  20eb02:	b0ff50ef          	jal	ra,204610 <cpl_print>
+  20eb06:	b791                	j	20ea4a <nvme_main+0xee>
+  20eb08:	1014                	addi	a3,sp,32
+  20eb0a:	0870                	addi	a2,sp,28
+  20eb0c:	01a10593          	addi	a1,sp,26
+  20eb10:	0828                	addi	a0,sp,24
+  20eb12:	ac6fe0ef          	jal	ra,20cdd8 <get_nvme_cmd>
+  20eb16:	8a2a                	mv	s4,a0
+  20eb18:	18000537          	lui	a0,0x18000
+  20eb1c:	1551                	addi	a0,a0,-12
+  20eb1e:	c93f50ef          	jal	ra,2047b0 <cpl_In32>
+  20eb22:	2a01                	sext.w	s4,s4
+  20eb24:	00050d9b          	sext.w	s11,a0
+  20eb28:	f3aa11e3          	bne	s4,s10,20ea4a <nvme_main+0xee>
+  20eb2c:	01815703          	lhu	a4,24(sp)
+  20eb30:	0007069b          	sext.w	a3,a4
+  20eb34:	01470863          	beq	a4,s4,20eb44 <nvme_main+0x1e8>
+  20eb38:	ef09                	bnez	a4,20eb52 <nvme_main+0x1f6>
+  20eb3a:	0828                	addi	a0,sp,24
+  20eb3c:	92bff0ef          	jal	ra,20e466 <handle_nvme_admin_cmd>
+  20eb40:	4c01                	li	s8,0
+  20eb42:	b721                	j	20ea4a <nvme_main+0xee>
+  20eb44:	02014703          	lbu	a4,32(sp)
+  20eb48:	377d                	addiw	a4,a4,-1
+  20eb4a:	0ff77713          	andi	a4,a4,255
+  20eb4e:	16e6fe63          	bgeu	a3,a4,20ecca <nvme_main+0x36e>
+  20eb52:	0828                	addi	a0,sp,24
+  20eb54:	cf9fd0ef          	jal	ra,20c84c <handle_nvme_io_cmd>
+  20eb58:	0828                	addi	a0,sp,24
+  20eb5a:	fa5fb0ef          	jal	ra,20aafe <ReqTransSliceToLowLevel>
+  20eb5e:	18000c37          	lui	s8,0x18000
+  20eb62:	ff4c0513          	addi	a0,s8,-12 # 17fffff4 <g_nvmeTask+0x17defec4>
+  20eb66:	c4bf50ef          	jal	ra,2047b0 <cpl_In32>
+  20eb6a:	00050a1b          	sext.w	s4,a0
+  20eb6e:	000a0a63          	beqz	s4,20eb82 <nvme_main+0x226>
+  20eb72:	02014703          	lbu	a4,32(sp)
+  20eb76:	4685                	li	a3,1
+  20eb78:	377d                	addiw	a4,a4,-1
+  20eb7a:	0ff77713          	andi	a4,a4,255
+  20eb7e:	00e6f463          	bgeu	a3,a4,20eb86 <nvme_main+0x22a>
+  20eb82:	4c01                	li	s8,0
+  20eb84:	b549                	j	20ea06 <nvme_main+0xaa>
+  20eb86:	6da2                	ld	s11,8(sp)
+  20eb88:	1c51                	addi	s8,s8,-12
+  20eb8a:	008d871b          	addiw	a4,s11,8
+  20eb8e:	02071d13          	slli	s10,a4,0x20
+  20eb92:	020d5d13          	srli	s10,s10,0x20
+  20eb96:	856a                	mv	a0,s10
+  20eb98:	c19f50ef          	jal	ra,2047b0 <cpl_In32>
+  20eb9c:	2501                	sext.w	a0,a0
+  20eb9e:	4785                	li	a5,1
+  20eba0:	0cf50763          	beq	a0,a5,20ec6e <nvme_main+0x312>
+  20eba4:	2db1                	addiw	s11,s11,12
+  20eba6:	b7d5                	j	20eb8a <nvme_main+0x22e>
+  20eba8:	820fe0ef          	jal	ra,20cbc8 <check_nvme_cc_en>
+  20ebac:	2501                	sext.w	a0,a0
+  20ebae:	e8051ee3          	bnez	a0,20ea4a <nvme_main+0xee>
+  20ebb2:	00042223          	sw	zero,4(s0)
+  20ebb6:	932fe0ef          	jal	ra,20cce8 <set_nvme_csts_shst>
+  20ebba:	4501                	li	a0,0
+  20ebbc:	8d8fe0ef          	jal	ra,20cc94 <set_nvme_csts_rdy>
+  20ebc0:	002107b7          	lui	a5,0x210
+  20ebc4:	b5878513          	addi	a0,a5,-1192 # 20fb58 <nvme_main+0x11fc>
+  20ebc8:	00042023          	sw	zero,0(s0)
+  20ebcc:	a45f50ef          	jal	ra,204610 <cpl_print>
+  20ebd0:	bdad                	j	20ea4a <nvme_main+0xee>
+  20ebd2:	4d81                	li	s11,0
+  20ebd4:	4a21                	li	s4,8
+  20ebd6:	856e                	mv	a0,s11
+  20ebd8:	4781                	li	a5,0
+  20ebda:	4701                	li	a4,0
+  20ebdc:	4681                	li	a3,0
+  20ebde:	4601                	li	a2,0
+  20ebe0:	4581                	li	a1,0
+  20ebe2:	4801                	li	a6,0
+  20ebe4:	d58fe0ef          	jal	ra,20d13c <set_io_cq>
+  20ebe8:	856e                	mv	a0,s11
+  20ebea:	4781                	li	a5,0
+  20ebec:	2d85                	addiw	s11,s11,1
+  20ebee:	4701                	li	a4,0
+  20ebf0:	4681                	li	a3,0
+  20ebf2:	4601                	li	a2,0
+  20ebf4:	4581                	li	a1,0
+  20ebf6:	c6efe0ef          	jal	ra,20d064 <set_io_sq>
+  20ebfa:	fd4d9ee3          	bne	s11,s4,20ebd6 <nvme_main+0x27a>
+  20ebfe:	4791                	li	a5,4
+  20ec00:	0387e763          	bltu	a5,s8,20ec2e <nvme_main+0x2d2>
+  20ec04:	2c05                	addiw	s8,s8,1
+  20ec06:	4601                	li	a2,0
+  20ec08:	4581                	li	a1,0
+  20ec0a:	4501                	li	a0,0
+  20ec0c:	00042223          	sw	zero,4(s0)
+  20ec10:	92cfe0ef          	jal	ra,20cd3c <set_nvme_admin_queue>
+  20ec14:	4501                	li	a0,0
+  20ec16:	8d2fe0ef          	jal	ra,20cce8 <set_nvme_csts_shst>
+  20ec1a:	4501                	li	a0,0
+  20ec1c:	878fe0ef          	jal	ra,20cc94 <set_nvme_csts_rdy>
+  20ec20:	bc0c8513          	addi	a0,s9,-1088 # 20fbc0 <nvme_main+0x1264>
+  20ec24:	00042023          	sw	zero,0(s0)
+  20ec28:	9e9f50ef          	jal	ra,204610 <cpl_print>
+  20ec2c:	bd39                	j	20ea4a <nvme_main+0xee>
+  20ec2e:	8562                	mv	a0,s8
+  20ec30:	fc5fd0ef          	jal	ra,20cbf4 <pcie_async_reset>
+  20ec34:	002107b7          	lui	a5,0x210
+  20ec38:	b7078513          	addi	a0,a5,-1168 # 20fb70 <nvme_main+0x1214>
+  20ec3c:	9d5f50ef          	jal	ra,204610 <cpl_print>
+  20ec40:	002107b7          	lui	a5,0x210
+  20ec44:	b9078513          	addi	a0,a5,-1136 # 20fb90 <nvme_main+0x1234>
+  20ec48:	9c9f50ef          	jal	ra,204610 <cpl_print>
+  20ec4c:	4c01                	li	s8,0
+  20ec4e:	bf65                	j	20ec06 <nvme_main+0x2aa>
+  20ec50:	65d5                	lui	a1,0x15
+  20ec52:	ff0a0513          	addi	a0,s4,-16
+  20ec56:	dd958593          	addi	a1,a1,-551 # 14dd9 <start-0x1eb227>
+  20ec5a:	b53f50ef          	jal	ra,2047ac <cpl_Out32>
+  20ec5e:	43c807b7          	lui	a5,0x43c80
+  20ec62:	4585                	li	a1,1
+  20ec64:	01878513          	addi	a0,a5,24 # 43c80018 <g_nvmeTask+0x43a6fee8>
+  20ec68:	b45f50ef          	jal	ra,2047ac <cpl_Out32>
+  20ec6c:	b579                	j	20eafa <nvme_main+0x19e>
+  20ec6e:	020d9813          	slli	a6,s11,0x20
+  20ec72:	02085813          	srli	a6,a6,0x20
+  20ec76:	8542                	mv	a0,a6
+  20ec78:	e042                	sd	a6,0(sp)
+  20ec7a:	b37f50ef          	jal	ra,2047b0 <cpl_In32>
+  20ec7e:	4601                	li	a2,0
+  20ec80:	2501                	sext.w	a0,a0
+  20ec82:	4581                	li	a1,0
+  20ec84:	a4cfe0ef          	jal	ra,20ced0 <set_auto_nvme_cpl>
+  20ec88:	002107b7          	lui	a5,0x210
+  20ec8c:	1287a603          	lw	a2,296(a5) # 210128 <table_logic_minus_count>
+  20ec90:	3a7d                	addiw	s4,s4,-1
+  20ec92:	85d2                	mv	a1,s4
+  20ec94:	2605                	addiw	a2,a2,1
+  20ec96:	8562                	mv	a0,s8
+  20ec98:	12c7a423          	sw	a2,296(a5)
+  20ec9c:	b11f50ef          	jal	ra,2047ac <cpl_Out32>
+  20eca0:	6802                	ld	a6,0(sp)
+  20eca2:	4581                	li	a1,0
+  20eca4:	8542                	mv	a0,a6
+  20eca6:	b07f50ef          	jal	ra,2047ac <cpl_Out32>
+  20ecaa:	004d851b          	addiw	a0,s11,4
+  20ecae:	1502                	slli	a0,a0,0x20
+  20ecb0:	9101                	srli	a0,a0,0x20
+  20ecb2:	4581                	li	a1,0
+  20ecb4:	af9f50ef          	jal	ra,2047ac <cpl_Out32>
+  20ecb8:	4581                	li	a1,0
+  20ecba:	856a                	mv	a0,s10
+  20ecbc:	af1f50ef          	jal	ra,2047ac <cpl_Out32>
+  20ecc0:	2db1                	addiw	s11,s11,12
+  20ecc2:	ec0a14e3          	bnez	s4,20eb8a <nvme_main+0x22e>
+  20ecc6:	4c01                	li	s8,0
+  20ecc8:	bb3d                	j	20ea06 <nvme_main+0xaa>
+  20ecca:	6c22                	ld	s8,8(sp)
+  20eccc:	a011                	j	20ecd0 <nvme_main+0x374>
+  20ecce:	2c31                	addiw	s8,s8,12
+  20ecd0:	008c0a1b          	addiw	s4,s8,8
+  20ecd4:	1a02                	slli	s4,s4,0x20
+  20ecd6:	020a5a13          	srli	s4,s4,0x20
+  20ecda:	8552                	mv	a0,s4
+  20ecdc:	ad5f50ef          	jal	ra,2047b0 <cpl_In32>
+  20ece0:	2501                	sext.w	a0,a0
+  20ece2:	f575                	bnez	a0,20ecce <nvme_main+0x372>
+  20ece4:	01a15583          	lhu	a1,26(sp)
+  20ece8:	020c1513          	slli	a0,s8,0x20
+  20ecec:	9101                	srli	a0,a0,0x20
+  20ecee:	abff50ef          	jal	ra,2047ac <cpl_Out32>
+  20ecf2:	02215583          	lhu	a1,34(sp)
+  20ecf6:	004c051b          	addiw	a0,s8,4
+  20ecfa:	1502                	slli	a0,a0,0x20
+  20ecfc:	9101                	srli	a0,a0,0x20
+  20ecfe:	aaff50ef          	jal	ra,2047ac <cpl_Out32>
+  20ed02:	4585                	li	a1,1
+  20ed04:	8552                	mv	a0,s4
+  20ed06:	aa7f50ef          	jal	ra,2047ac <cpl_Out32>
+  20ed0a:	18000537          	lui	a0,0x18000
+  20ed0e:	001d859b          	addiw	a1,s11,1
+  20ed12:	1551                	addi	a0,a0,-12
+  20ed14:	a99f50ef          	jal	ra,2047ac <cpl_Out32>
+  20ed18:	01815703          	lhu	a4,24(sp)
+  20ed1c:	bd31                	j	20eb38 <nvme_main+0x1dc>
+  20ed1e:	ff440513          	addi	a0,s0,-12
+  20ed22:	a8ff50ef          	jal	ra,2047b0 <cpl_In32>
+  20ed26:	17fe0437          	lui	s0,0x17fe0
+  20ed2a:	0005049b          	sext.w	s1,a0
+  20ed2e:	f0040413          	addi	s0,s0,-256 # 17fdff00 <g_nvmeTask+0x17dcfdd0>
+  20ed32:	4a05                	li	s4,1
+  20ed34:	c8a5                	beqz	s1,20eda4 <nvme_main+0x448>
+  20ed36:	0084091b          	addiw	s2,s0,8
+  20ed3a:	1902                	slli	s2,s2,0x20
+  20ed3c:	02095913          	srli	s2,s2,0x20
+  20ed40:	854a                	mv	a0,s2
+  20ed42:	a6ff50ef          	jal	ra,2047b0 <cpl_In32>
+  20ed46:	0005079b          	sext.w	a5,a0
+  20ed4a:	01478f63          	beq	a5,s4,20ed68 <nvme_main+0x40c>
+  20ed4e:	2431                	addiw	s0,s0,12
+  20ed50:	0084091b          	addiw	s2,s0,8
+  20ed54:	1902                	slli	s2,s2,0x20
+  20ed56:	02095913          	srli	s2,s2,0x20
+  20ed5a:	854a                	mv	a0,s2
+  20ed5c:	a55f50ef          	jal	ra,2047b0 <cpl_In32>
+  20ed60:	0005079b          	sext.w	a5,a0
+  20ed64:	ff4795e3          	bne	a5,s4,20ed4e <nvme_main+0x3f2>
+  20ed68:	02041993          	slli	s3,s0,0x20
+  20ed6c:	0209d993          	srli	s3,s3,0x20
+  20ed70:	854e                	mv	a0,s3
+  20ed72:	a3ff50ef          	jal	ra,2047b0 <cpl_In32>
+  20ed76:	4601                	li	a2,0
+  20ed78:	2501                	sext.w	a0,a0
+  20ed7a:	4581                	li	a1,0
+  20ed7c:	954fe0ef          	jal	ra,20ced0 <set_auto_nvme_cpl>
+  20ed80:	854e                	mv	a0,s3
   20ed82:	4581                	li	a1,0
-  20ed84:	854a                	mv	a0,s2
-  20ed86:	34fd                	addiw	s1,s1,-1
-  20ed88:	a25f50ef          	jal	ra,2047ac <cpl_Out32>
-  20ed8c:	2431                	addiw	s0,s0,12
-  20ed8e:	f8d1                	bnez	s1,20ed22 <nvme_main+0x3c6>
-  20ed90:	18000537          	lui	a0,0x18000
-  20ed94:	4581                	li	a1,0
-  20ed96:	1551                	addi	a0,a0,-12
-  20ed98:	a15f50ef          	jal	ra,2047ac <cpl_Out32>
-  20ed9c:	b109                	j	20e99e <nvme_main+0x42>
+  20ed84:	a29f50ef          	jal	ra,2047ac <cpl_Out32>
+  20ed88:	0044051b          	addiw	a0,s0,4
+  20ed8c:	1502                	slli	a0,a0,0x20
+  20ed8e:	9101                	srli	a0,a0,0x20
+  20ed90:	4581                	li	a1,0
+  20ed92:	a1bf50ef          	jal	ra,2047ac <cpl_Out32>
+  20ed96:	4581                	li	a1,0
+  20ed98:	854a                	mv	a0,s2
+  20ed9a:	34fd                	addiw	s1,s1,-1
+  20ed9c:	a11f50ef          	jal	ra,2047ac <cpl_Out32>
+  20eda0:	2431                	addiw	s0,s0,12
+  20eda2:	f8d1                	bnez	s1,20ed36 <nvme_main+0x3da>
+  20eda4:	18000537          	lui	a0,0x18000
+  20eda8:	4581                	li	a1,0
+  20edaa:	1551                	addi	a0,a0,-12
+  20edac:	a01f50ef          	jal	ra,2047ac <cpl_Out32>
+  20edb0:	b6fd                	j	20e99e <nvme_main+0x42>
